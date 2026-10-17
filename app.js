@@ -20,13 +20,11 @@
   const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
   async function init() {
-    try {
-      const decks = await (await fetch("data/decks.json")).json();
-      const id = new URLSearchParams(location.search).get("deck");
-      deck = decks.find((d) => d.id === id) || decks[0];
-      allCards = await (await fetch(deck.file)).json();
-    } catch {
-      feed.innerHTML = '<p class="msg">Could not load cards.<br>Open this page from a web server, not a file.</p>';
+    const id = document.body.dataset.deck;
+    deck = (window.DECKS || []).find((d) => d.id === id);
+    allCards = deck ? (window.CARDS || {})[id] : null;
+    if (!allCards) {
+      feed.innerHTML = '<p class="msg">Could not load cards.</p>';
       return;
     }
     status = load(deck.id);

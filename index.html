@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="hubhtml">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,20 +11,45 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hub.css">
 </head>
-<body>
-  <header class="top">
-    <div class="top-row">
-      <span id="deckName" class="deck">…</span>
-      <span id="counter" class="counter"></span>
-    </div>
-    <div class="bar"><div id="barFill" class="bar-fill"></div></div>
-  </header>
+<body class="hub">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
 
-  <main id="feed" class="feed" aria-live="polite"></main>
+  <main class="wrap">
+    <span class="chip">⚡ AI INTERVIEW PREP</span>
+    <h1 class="hero">Learn AI terms.<br><span class="grad">Ace the interview.</span></h1>
+    <p class="sub">Swipe. Remember. Repeat.</p>
+
+    <a id="cta" class="cta" href="rag-flash-card.html">
+      <span id="ctaText">Start RAG cards</span>
+      <span class="cta-arrow">→</span>
+    </a>
+
+    <section class="stats" aria-label="Your progress">
+      <div class="stat-pill k"><b id="sKnown">0</b><span>GOT IT</span></div>
+      <div class="stat-pill r"><b id="sReview">0</b><span>REVIEW</span></div>
+      <div class="stat-pill d"><b id="sDecks">0</b><span>DECKS</span></div>
+    </section>
+
+    <h2 class="section">Pick your deck</h2>
+    <div id="decks" class="decks"></div>
+
+    <h2 class="section">How it works</h2>
+    <div class="how">
+      <div><i>⬆️</i><b>Swipe up</b><span>next card</span></div>
+      <div><i>✅</i><b>Swipe right</b><span>got it</span></div>
+      <div><i>🔁</i><b>Swipe left</b><span>review later</span></div>
+    </div>
+
+    <p class="note">Progress is saved on this device only.</p>
+  </main>
 
   <footer class="foot">© Moin Master</footer>
 
-  <script src="app.js"></script>
+  <script src="data/decks.js"></script>
+  <script src="hub.js"></script>
 </body>
 </html>

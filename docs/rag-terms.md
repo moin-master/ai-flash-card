@@ -1,50 +1,58 @@
 # RAG Interview Terms
 
 ## ⭐ Most Important (AI Engineer Interviews)
-- RAG vs Fine-Tuning
-- RAG Pipeline (Indexing → Retrieval → Generation)
-- Hallucination
-- Grounding
-- Chunking
-- Chunk Size / Overlap
-- Semantic Chunking
-- Embedding Model
-- Cosine Similarity
-- Vector Database
-- ANN vs Exact Search
-- HNSW
-- Top-k
-- Hybrid Search
-- BM25
-- Dense vs Sparse Retrieval
-- Reranking / Cross-Encoder
-- Bi-Encoder vs Cross-Encoder
-- Metadata Filtering
-- Query Rewriting
-- HyDE
-- Multi-Query Retrieval
-- Lost in the Middle
-- Context Window Limits
-- Context Compression
-- MMR
-- RRF
-- Agentic RAG
-- GraphRAG
-- Multi-Hop Retrieval
-- Faithfulness
-- Context Precision / Recall
-- Recall@k / MRR / NDCG
-- RAGAS
-- LLM-as-a-Judge
-- Golden Dataset
-- Prompt Injection via Documents
-- Access Control / Permissions-Aware Retrieval
-- Latency / Cost Optimization
-- Semantic Caching
-- Data Freshness / Re-Indexing
-- Common Failure Modes
-- LangChain / LlamaIndex
-- Pinecone / FAISS / Chroma / pgvector
+
+> ✅ = covered as a flash card in `data/rag.js` (50 cards, deck: rag-flash-card.html)
+
+- ✅ RAG vs Fine-Tuning
+- ✅ RAG Pipeline (Indexing → Retrieval → Generation)
+- ✅ Hallucination
+- ✅ Grounding
+- ✅ Chunking
+- ✅ Chunk Size / Overlap
+- ✅ Semantic Chunking
+- ✅ Embedding Model
+- ✅ Cosine Similarity
+- ✅ Vector Database
+- ✅ ANN vs Exact Search
+- ✅ HNSW
+- ✅ Top-k
+- ✅ Hybrid Search
+- ✅ BM25
+- ✅ Dense vs Sparse Retrieval
+- ✅ Reranking / Cross-Encoder
+- ✅ Bi-Encoder vs Cross-Encoder
+- ✅ Metadata Filtering
+- ✅ Query Rewriting
+- ✅ HyDE
+- ✅ Multi-Query Retrieval
+- ✅ Lost in the Middle
+- ✅ Context Window Limits
+- ✅ Context Compression
+- ✅ MMR
+- ✅ RRF
+- ✅ Agentic RAG
+- ✅ GraphRAG
+- ✅ Multi-Hop Retrieval
+- ✅ Faithfulness
+- ✅ Context Precision / Recall
+- ✅ Recall@k / MRR / NDCG
+- ✅ RAGAS
+- ✅ LLM-as-a-Judge
+- ✅ Golden Dataset
+- ✅ Prompt Injection via Documents
+- ✅ Access Control / Permissions-Aware Retrieval
+- ✅ Latency / Cost Optimization
+- ✅ Semantic Caching
+- ✅ Data Freshness / Re-Indexing
+- ✅ Common Failure Modes
+- ✅ LangChain / LlamaIndex
+- ✅ Pinecone / FAISS / Chroma / pgvector
+- ✅ Query Routing
+- ✅ Parent-Document Retrieval
+- ✅ Citations & Attribution
+- ✅ Knowledge Graph
+- ✅ Self-RAG / Corrective RAG
 
 ## Fundamentals
 - Retrieval-Augmented Generation (RAG)
