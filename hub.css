@@ -85,7 +85,7 @@ body.hub { height: auto; min-height: 100%; overflow-y: auto; overflow-x: hidden;
 }
 
 /* how it works */
-.how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.how { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .how div { text-align: center; padding: 14px 6px; border-radius: 20px; background: rgba(21,21,42,.8); border: 1.5px solid var(--card-edge); }
 .how i { display: block; font-style: normal; font-size: 26px; margin-bottom: 6px; }
 .how b { display: block; font-size: 13px; font-weight: 800; }

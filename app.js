@@ -9,11 +9,15 @@
   let allCards = [];
   let cards = [];
   let status = {};
+  let stars = {};
   let reviewOnly = false;
 
   const storeKey = (id) => `flashcards:${id}`;
   const load = (id) => { try { return JSON.parse(localStorage.getItem(storeKey(id))) || {}; } catch { return {}; } };
   const save = () => { try { localStorage.setItem(storeKey(deck.id), JSON.stringify(status)); } catch {} };
+  const starKey = (id) => `flashcards:${id}:stars`;
+  const loadStars = (id) => { try { return JSON.parse(localStorage.getItem(starKey(id))) || {}; } catch { return {}; } };
+  const saveStars = () => { try { localStorage.setItem(starKey(deck.id), JSON.stringify(stars)); } catch {} };
 
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   // escape first, then turn **word** into bold
@@ -28,6 +32,7 @@
       return;
     }
     status = load(deck.id);
+    stars = loadStars(deck.id);
     deckName.textContent = `${deck.emoji} ${deck.title}`;
     render();
   }
@@ -49,7 +54,7 @@
       <article class="card" data-id="${c.id}">
         <span class="stamp know">GOT IT ✔</span>
         <span class="stamp again">REVIEW ✖</span>
-        <span class="tag">${esc(c.tag || "Concept")}</span>
+        <div class="tag-row"><span class="tag">${esc(c.tag || "Concept")}</span><span class="star-badge" aria-label="Starred">⭐</span></div>
         <h2 class="term">${esc(c.term)}</h2>
         <div class="label why">🎤 INTERVIEW ANSWER</div>
         <p class="explain">${rich(c.explain)}</p>
@@ -59,6 +64,7 @@
       </article>`;
     const card = slide.querySelector(".card");
     paint(card, status[c.id]);
+    paintStar(card, c.id);
     attachSwipe(card, c.id);
     return slide;
   }
@@ -141,15 +147,42 @@
         card.classList.remove("left", "right");
       }
     };
-    card.addEventListener("pointerup", end);
+    // double-tap (or double-click) toggles the star
+    let lastTap = 0;
+    card.addEventListener("pointerup", () => {
+      const wasTap = active && horizontal === null;
+      end();
+      if (!wasTap) return;
+      const now = Date.now();
+      if (now - lastTap < 320) { lastTap = 0; toggleStar(card, id); }
+      else lastTap = now;
+    });
     card.addEventListener("pointercancel", end);
+    card.addEventListener("dblclick", (e) => e.preventDefault());
+  }
+
+  function toggleStar(card, id) {
+    if (stars[id]) delete stars[id]; else stars[id] = true;
+    saveStars();
+    paintStar(card, id);
+    const pop = document.createElement("div");
+    pop.className = "star-pop" + (stars[id] ? "" : " off");
+    pop.textContent = "⭐";
+    card.appendChild(pop);
+    setTimeout(() => pop.remove(), 650);
+    updateProgress();
+  }
+
+  function paintStar(card, id) {
+    card.classList.toggle("starred", !!stars[id]);
   }
 
   function updateProgress(forceIndex) {
     const known = cards.filter((c) => status[c.id] === "known").length;
     barFill.style.width = cards.length ? `${(known / cards.length) * 100}%` : "0%";
     const idx = forceIndex ?? currentIndex();
-    counter.textContent = idx >= cards.length ? "done" : `${idx + 1} / ${cards.length}  ·  ✔ ${known}`;
+    const starred = cards.filter((c) => stars[c.id]).length;
+    counter.textContent = idx >= cards.length ? "done" : `${idx + 1} / ${cards.length}  ·  ✔ ${known}  ·  ⭐ ${starred}`;
     if (idx >= cards.length) fillEnd();
   }
 

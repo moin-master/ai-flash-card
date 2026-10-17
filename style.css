@@ -150,3 +150,20 @@ strong { color: var(--yellow); font-weight: 800; }
 /* back link in deck header */
 .deck-wrap { display: flex; align-items: center; gap: 10px; }
 .back { color: var(--text); text-decoration: none; font-size: 20px; font-weight: 800; padding: 2px 8px 2px 0; }
+
+/* star (double-tap) */
+.tag-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.tag-row .tag { margin-bottom: 0; }
+.star-badge { font-size: 22px; opacity: 0; transform: scale(.5); transition: opacity .2s, transform .2s; }
+.card.starred .star-badge { opacity: 1; transform: scale(1); }
+.card.starred { border-color: var(--yellow); }
+.star-pop {
+  position: absolute; top: 50%; left: 50%; font-size: 90px; pointer-events: none; z-index: 5;
+  transform: translate(-50%, -50%) scale(.4); opacity: 0; animation: starpop .6s ease-out;
+}
+.star-pop.off { filter: grayscale(1); }
+@keyframes starpop {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.4); }
+  35% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+  100% { opacity: 0; transform: translate(-50%, -60%) scale(1); }
+}
