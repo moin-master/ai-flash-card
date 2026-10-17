@@ -1,0 +1,780 @@
+# LLM Interview Terms
+
+## ⭐ Most Important (AI Engineer Interviews)
+- Transformer
+- Self-Attention
+- Multi-Head Attention
+- Query, Key, Value
+- Positional Encoding / RoPE
+- Encoder vs Decoder
+- Decoder-Only
+- BERT vs GPT
+- Tokenization / BPE
+- Context Window
+- KV Cache
+- Flash Attention
+- GQA / MQA
+- Mixture of Experts
+- Scaling Laws
+- Pre-training
+- Next-Token Prediction
+- Fine-Tuning
+- SFT / Instruction Tuning
+- LoRA / QLoRA
+- PEFT
+- Catastrophic Forgetting
+- RLHF
+- DPO
+- PPO
+- Reward Model
+- Alignment
+- Distillation
+- Quantization (INT8 / INT4)
+- GPTQ / AWQ / GGUF
+- Temperature
+- Top-k / Top-p
+- Greedy vs Beam Search
+- Logits / Softmax
+- Prompt Engineering
+- Zero-Shot / Few-Shot
+- In-Context Learning
+- Chain-of-Thought
+- System Prompt
+- Function Calling
+- Structured Output
+- Hallucination
+- Prompt Injection / Jailbreak
+- Latency vs Throughput
+- TTFT
+- Prefill vs Decode
+- Continuous Batching
+- vLLM
+- Speculative Decoding
+- Perplexity
+- MMLU / HumanEval / SWE-bench
+- LLM-as-a-Judge
+- Benchmark Contamination
+- Reasoning Models
+- Test-Time Compute
+- Long Context / Lost in the Middle
+- Multimodal LLM
+- Open-Weight vs Closed
+- Fine-Tuning vs RAG vs Prompting
+
+## Fundamentals
+- Language Model
+- Large Language Model (LLM)
+- Small Language Model (SLM)
+- Foundation Model
+- Frontier Model
+- Generative AI
+- Pre-trained Model
+- Base Model
+- Instruct Model
+- Chat Model
+- Reasoning Model
+- Multimodal Model
+- Vision-Language Model (VLM)
+- Open-Weight Model
+- Open-Source Model
+- Closed / Proprietary Model
+- Autoregressive Model
+- Next-Token Prediction
+- Probabilistic Model
+- Stochastic Parrot
+- Emergent Abilities
+- Scaling Laws
+- Chinchilla Scaling
+- Compute-Optimal Training
+- Parameter Count
+- Billions of Parameters
+- Training Compute (FLOPs)
+- Model Family
+- Model Card
+
+## Text Representation
+- Token
+- Tokenization
+- Tokenizer
+- Vocabulary
+- Vocabulary Size
+- Byte-Pair Encoding (BPE)
+- Byte-Level BPE
+- WordPiece
+- SentencePiece
+- Unigram
+- tiktoken
+- Subword
+- Special Tokens
+- BOS / EOS Token
+- Padding Token
+- Unknown Token (UNK)
+- Token ID
+- Out-of-Vocabulary
+- Multilingual Tokenization
+- Token Count
+- Tokens per Word
+- Context Length
+- Context Window
+
+## Embeddings & Position
+- Embedding
+- Token Embedding
+- Embedding Matrix
+- Word2Vec
+- GloVe
+- FastText
+- Contextual Embedding
+- Positional Encoding
+- Sinusoidal Positional Encoding
+- Learned Positional Embedding
+- Relative Position
+- Rotary Position Embedding (RoPE)
+- ALiBi
+- YaRN
+- Position Interpolation
+- Context Extension
+- NTK-Aware Scaling
+
+## Transformer Architecture
+- Transformer
+- "Attention Is All You Need"
+- Encoder
+- Decoder
+- Encoder-Decoder
+- Encoder-Only
+- Decoder-Only
+- Self-Attention
+- Cross-Attention
+- Causal Attention
+- Masked Attention
+- Multi-Head Attention (MHA)
+- Multi-Query Attention (MQA)
+- Grouped-Query Attention (GQA)
+- Multi-Head Latent Attention (MLA)
+- Query, Key, Value (QKV)
+- Scaled Dot-Product Attention
+- Attention Score
+- Attention Weights
+- Attention Head
+- Softmax
+- Feed-Forward Network (FFN)
+- MLP Block
+- Residual Connection
+- Skip Connection
+- Layer Normalization
+- RMSNorm
+- Pre-Norm
+- Post-Norm
+- Activation Function
+- GELU
+- SwiGLU
+- ReLU
+- Hidden Dimension
+- Number of Layers
+- Number of Heads
+- Head Dimension
+- Hidden State
+- Residual Stream
+- Logits
+- Language Modeling Head
+- Weight Tying
+- Dropout
+- Quadratic Complexity
+- Sparse Attention
+- Sliding Window Attention
+- Local vs Global Attention
+- Linear Attention
+- Flash Attention
+- Ring Attention
+- KV Cache
+- Prefill
+- Decode
+- Attention Sink
+
+## Architecture Variants
+- GPT
+- BERT
+- T5
+- BART
+- Encoder-Decoder vs Decoder-Only
+- Mixture of Experts (MoE)
+- Expert
+- Router / Gating Network
+- Top-k Routing
+- Load Balancing
+- Sparse MoE
+- Dense Model
+- Shared Experts
+- State Space Model (SSM)
+- Mamba
+- RWKV
+- RetNet
+- Hybrid Architecture
+- Jamba
+- Diffusion Language Model
+- Recurrent Transformer
+- Long-Context Architecture
+- Multimodal Transformer
+- Vision Transformer (ViT)
+- Perceiver
+
+## Popular Models
+- GPT-3 / GPT-4 / GPT-5
+- ChatGPT
+- o1 / o3 (Reasoning)
+- Claude
+- Gemini
+- Gemma
+- LLaMA
+- Mistral
+- Mixtral
+- Qwen
+- DeepSeek
+- DeepSeek-R1
+- Phi
+- Falcon
+- Grok
+- Command R
+- PaLM
+- BLOOM
+- OPT
+- Yi
+- Kimi
+- GLM
+- Nemotron
+- Olmo
+- Stable LM
+- BERT / RoBERTa / DistilBERT
+- T5 / Flan-T5
+- Whisper
+- CLIP
+
+## Pre-training
+- Pre-training
+- Self-Supervised Learning
+- Language Modeling Objective
+- Causal Language Modeling (CLM)
+- Masked Language Modeling (MLM)
+- Next Sentence Prediction
+- Span Corruption
+- Denoising Objective
+- Training Corpus
+- Web Crawl
+- Common Crawl
+- The Pile
+- C4
+- RedPajama
+- FineWeb
+- Data Curation
+- Data Filtering
+- Data Deduplication
+- Data Mixing
+- Data Quality
+- Synthetic Data
+- Data Contamination
+- Benchmark Leakage
+- Tokens Seen
+- Epochs
+- Curriculum Learning
+- Annealing
+- Continued Pre-training
+- Mid-Training
+- Training Stability
+- Loss Spike
+- Learning Rate Schedule
+- Cosine Decay
+- Warmup
+- Batch Size
+- Gradient Clipping
+- AdamW
+- Weight Decay
+- Mixed Precision
+- BF16 / FP16 / FP8
+- Gradient Checkpointing
+- Activation Recomputation
+
+## Distributed Training & Infrastructure
+- Data Parallelism
+- Model Parallelism
+- Tensor Parallelism
+- Pipeline Parallelism
+- Sequence Parallelism
+- Expert Parallelism
+- 3D Parallelism
+- ZeRO
+- FSDP
+- DeepSpeed
+- Megatron-LM
+- Gradient Accumulation
+- All-Reduce
+- NCCL
+- NVLink
+- InfiniBand
+- GPU
+- TPU
+- H100 / A100 / B200
+- HBM
+- VRAM
+- FLOPs
+- MFU (Model FLOPs Utilization)
+- Compute-Bound
+- Memory-Bound
+- Checkpointing
+- Fault Tolerance
+- Cluster
+
+## Post-training & Alignment
+- Post-training
+- Supervised Fine-Tuning (SFT)
+- Instruction Tuning
+- Chat Tuning
+- Alignment
+- RLHF
+- RLAIF
+- Reward Model
+- Preference Data
+- Human Feedback
+- PPO
+- DPO
+- IPO
+- KTO
+- ORPO
+- SimPO
+- GRPO
+- RLVR
+- Rejection Sampling
+- Best-of-N
+- Constitutional AI
+- Reward Hacking
+- Overoptimization
+- KL Penalty
+- Reference Model
+- Policy Model
+- Process Reward Model (PRM)
+- Outcome Reward Model (ORM)
+- Safety Tuning
+- Red Teaming
+- Refusal
+- Sycophancy
+- Helpful, Honest, Harmless (HHH)
+- Model Spec
+- Self-Instruct
+- Alpaca
+- Distillation
+- Model Merging
+
+## Fine-Tuning & Adaptation
+- Fine-Tuning
+- Full Fine-Tuning
+- Parameter-Efficient Fine-Tuning (PEFT)
+- LoRA
+- QLoRA
+- DoRA
+- Adapters
+- Prefix Tuning
+- Prompt Tuning
+- P-Tuning
+- IA3
+- Rank
+- Alpha
+- Target Modules
+- Catastrophic Forgetting
+- Domain Adaptation
+- Task-Specific Fine-Tuning
+- Multi-Task Fine-Tuning
+- Instruction Dataset
+- Chat Template
+- Data Formatting
+- Hyperparameters
+- Learning Rate
+- Hugging Face TRL
+- Axolotl
+- Unsloth
+- LLaMA-Factory
+- OpenAI Fine-Tuning API
+- Fine-Tuning vs RAG
+- Fine-Tuning vs Prompting
+
+## Inference & Decoding
+- Inference
+- Forward Pass
+- Autoregressive Decoding
+- Greedy Decoding
+- Beam Search
+- Sampling
+- Temperature
+- Top-k Sampling
+- Top-p (Nucleus) Sampling
+- Min-p Sampling
+- Typical Sampling
+- Repetition Penalty
+- Frequency Penalty
+- Presence Penalty
+- Logit Bias
+- Stop Sequences
+- Max Tokens
+- Seed
+- Determinism
+- Logprobs
+- Constrained Decoding
+- Grammar-Based Decoding
+- Structured Output
+- JSON Mode
+- Speculative Decoding
+- Draft Model
+- Medusa
+- Multi-Token Prediction
+- Prefix Caching
+- Prompt Caching
+- Streaming
+- Test-Time Compute
+- Self-Consistency
+- Best-of-N Sampling
+- Majority Voting
+- Chain-of-Thought
+- Extended Thinking
+- Thinking Budget
+
+## Inference Optimization & Serving
+- Latency
+- Throughput
+- Time to First Token (TTFT)
+- Time per Output Token (TPOT)
+- Tokens per Second
+- Batching
+- Continuous Batching
+- In-Flight Batching
+- PagedAttention
+- vLLM
+- TensorRT-LLM
+- Text Generation Inference (TGI)
+- SGLang
+- llama.cpp
+- Ollama
+- ONNX
+- KV Cache
+- KV Cache Quantization
+- KV Cache Eviction
+- Flash Attention
+- Kernel Fusion
+- Operator Fusion
+- Memory Bandwidth
+- Model Sharding
+- Offloading
+- Edge Inference
+- On-Device LLM
+- Serverless Inference
+- Autoscaling
+- Load Balancing
+- Cold Start
+- Cost per Token
+- Quantization
+- Pruning
+- Distillation
+- Sparsity
+
+## Quantization & Compression
+- Quantization
+- Post-Training Quantization (PTQ)
+- Quantization-Aware Training (QAT)
+- INT8
+- INT4
+- FP8
+- FP4
+- NF4
+- GPTQ
+- AWQ
+- SmoothQuant
+- GGUF
+- GGML
+- bitsandbytes
+- Weight-Only Quantization
+- Activation Quantization
+- Mixed Precision
+- Calibration
+- Perplexity Degradation
+- Pruning
+- Structured Pruning
+- Unstructured Pruning
+- Knowledge Distillation
+- Low-Rank Factorization
+
+## Prompting
+- Prompt
+- Prompt Engineering
+- System Prompt
+- User Prompt
+- Assistant Prompt
+- Prefill
+- Zero-Shot
+- One-Shot
+- Few-Shot
+- In-Context Learning
+- Chain-of-Thought (CoT)
+- Zero-Shot CoT
+- Tree-of-Thought
+- Self-Consistency
+- ReAct
+- Role Prompting
+- Persona
+- Instruction Following
+- Prompt Template
+- Prompt Chaining
+- Meta-Prompting
+- Delimiters
+- XML Tags
+- Output Format
+- Negative Instructions
+- Prompt Sensitivity
+- Prompt Optimization
+- DSPy
+- Prompt Injection
+- Jailbreak
+- Prompt Leaking
+- Context Engineering
+- Prompt Caching
+
+## Context & Long Context
+- Context Window
+- Long Context
+- Needle in a Haystack
+- Lost in the Middle
+- Context Rot
+- Context Extension
+- Context Compression
+- Context Caching
+- Effective Context Length
+- Retrieval vs Long Context
+- Sliding Window
+- Memory Tokens
+- Infinite Context
+- RULER
+- LongBench
+
+## Hallucination & Reliability
+- Hallucination
+- Confabulation
+- Factuality
+- Faithfulness
+- Groundedness
+- Intrinsic vs Extrinsic Hallucination
+- Overconfidence
+- Calibration
+- Uncertainty Estimation
+- Self-Verification
+- Chain-of-Verification
+- Fact-Checking
+- Citation
+- Grounding
+- RAG
+- Knowledge Cutoff
+- Temporal Drift
+- Sycophancy
+- Non-Determinism
+- Brittleness
+- Reversal Curse
+- Position Bias
+- Verbosity Bias
+- Self-Preference Bias
+
+## Evaluation & Benchmarks
+- Benchmark
+- Evaluation
+- Perplexity
+- Cross-Entropy Loss
+- Bits per Byte
+- BLEU
+- ROUGE
+- METEOR
+- BERTScore
+- Exact Match
+- F1
+- Pass@k
+- Win Rate
+- Elo Rating
+- LLM-as-a-Judge
+- Human Evaluation
+- Pairwise Comparison
+- LMSYS Chatbot Arena
+- MMLU
+- MMLU-Pro
+- GPQA
+- HellaSwag
+- ARC
+- WinoGrande
+- TruthfulQA
+- GSM8K
+- MATH
+- AIME
+- HumanEval
+- MBPP
+- SWE-bench
+- LiveCodeBench
+- BIG-Bench
+- HELM
+- IFEval
+- MT-Bench
+- AlpacaEval
+- Humanity's Last Exam
+- ARC-AGI
+- Benchmark Saturation
+- Benchmark Contamination
+- Goodhart's Law
+- Eval Harness
+- Red-Team Evals
+- Safety Evals
+- Evals-Driven Development
+
+## Safety, Security & Ethics
+- AI Safety
+- Alignment
+- Guardrails
+- Content Moderation
+- Safety Classifier
+- Refusal
+- Over-Refusal
+- Jailbreak
+- Prompt Injection
+- Indirect Prompt Injection
+- Adversarial Prompt
+- Data Poisoning
+- Backdoor
+- Training Data Extraction
+- Memorization
+- Membership Inference
+- PII Leakage
+- Privacy
+- Differential Privacy
+- Bias
+- Fairness
+- Toxicity
+- Misinformation
+- Deepfake
+- Watermarking
+- Copyright
+- Licensing
+- Model Card
+- Responsible AI
+- EU AI Act
+- NIST AI RMF
+- Interpretability
+- Mechanistic Interpretability
+- Sparse Autoencoder
+- Circuits
+- Feature Visualization
+- Probing
+- Attention Visualization
+- Superposition
+- Deceptive Alignment
+- Alignment Faking
+- Existential Risk
+- Responsible Scaling Policy
+
+## Multimodal
+- Multimodal LLM
+- Vision-Language Model
+- Image Encoder
+- Vision Encoder
+- Projector
+- Image Tokens
+- Audio Tokens
+- Speech-to-Text
+- Text-to-Speech
+- Speech-to-Speech
+- Native Multimodality
+- Any-to-Any
+- CLIP
+- LLaVA
+- Flamingo
+- Document Understanding
+- OCR-Free
+- Video Understanding
+- Image Generation
+- Text-to-Image
+- Diffusion Model
+
+## Tool Use & Application Layer
+- Function Calling
+- Tool Use
+- Structured Output
+- JSON Schema
+- Retrieval-Augmented Generation
+- Agents
+- Model Context Protocol (MCP)
+- Code Interpreter
+- Plugins
+- API
+- SDK
+- Streaming Response
+- System Message
+- Chat Completions API
+- Responses API
+- Messages API
+- Batch API
+- Embeddings API
+- Rate Limit
+- Token Pricing
+- Input vs Output Tokens
+- Cached Tokens
+- Model Routing
+- Fallback
+- Gateway
+- LangChain
+- LlamaIndex
+- Hugging Face
+- OpenRouter
+- LiteLLM
+- Vercel AI SDK
+
+## Mechanistic & Theory Concepts
+- In-Context Learning
+- Induction Heads
+- Grokking
+- Double Descent
+- Emergence
+- Phase Transition
+- Superposition
+- Polysemanticity
+- Residual Stream
+- Attention Pattern
+- Logit Lens
+- Activation Patching
+- Steering Vectors
+- Representation Engineering
+- Linear Probe
+- World Model
+- Compression as Intelligence
+- Bitter Lesson
+- Scaling Hypothesis
+- Data Wall
+- Model Collapse
+
+## Classic Interview Comparisons
+- Encoder vs Decoder
+- BERT vs GPT
+- RNN vs Transformer
+- Pre-training vs Fine-tuning
+- SFT vs RLHF
+- PPO vs DPO
+- LoRA vs Full Fine-Tuning
+- RAG vs Fine-Tuning
+- Prompting vs Fine-Tuning
+- Open vs Closed Models
+- Dense vs MoE
+- Temperature vs Top-p
+- Greedy vs Beam vs Sampling
+- MHA vs MQA vs GQA
+- Batch Norm vs Layer Norm
+- Pre-Norm vs Post-Norm
+- PTQ vs QAT
+- Latency vs Throughput
+- Prefill vs Decode
+- Context Window vs Memory
+- Base vs Instruct Model
+- Reasoning vs Non-Reasoning Models
+- Why Attention is Quadratic
+- Why KV Cache
+- Why Scaling Works
+- Why Hallucination Happens
+- Why Quantize

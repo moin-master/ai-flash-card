@@ -1,0 +1,436 @@
+# RAG Interview Terms
+
+## ⭐ Most Important (AI Engineer Interviews)
+- RAG vs Fine-Tuning
+- RAG Pipeline (Indexing → Retrieval → Generation)
+- Hallucination
+- Grounding
+- Chunking
+- Chunk Size / Overlap
+- Semantic Chunking
+- Embedding Model
+- Cosine Similarity
+- Vector Database
+- ANN vs Exact Search
+- HNSW
+- Top-k
+- Hybrid Search
+- BM25
+- Dense vs Sparse Retrieval
+- Reranking / Cross-Encoder
+- Bi-Encoder vs Cross-Encoder
+- Metadata Filtering
+- Query Rewriting
+- HyDE
+- Multi-Query Retrieval
+- Lost in the Middle
+- Context Window Limits
+- Context Compression
+- MMR
+- RRF
+- Agentic RAG
+- GraphRAG
+- Multi-Hop Retrieval
+- Faithfulness
+- Context Precision / Recall
+- Recall@k / MRR / NDCG
+- RAGAS
+- LLM-as-a-Judge
+- Golden Dataset
+- Prompt Injection via Documents
+- Access Control / Permissions-Aware Retrieval
+- Latency / Cost Optimization
+- Semantic Caching
+- Data Freshness / Re-Indexing
+- Common Failure Modes
+- LangChain / LlamaIndex
+- Pinecone / FAISS / Chroma / pgvector
+
+## Fundamentals
+- Retrieval-Augmented Generation (RAG)
+- Parametric Memory
+- Non-Parametric Memory
+- Knowledge Cutoff
+- Grounding
+- Grounded Generation
+- Hallucination
+- Context Window
+- In-Context Learning
+- Open-Book vs Closed-Book
+- Naive RAG
+- Advanced RAG
+- Modular RAG
+- RAG vs Fine-Tuning
+- RAG vs Long Context
+- Knowledge Base
+- Corpus
+- Source of Truth
+- Citation / Attribution
+
+## Pipeline Stages
+- Indexing (Offline)
+- Retrieval (Online)
+- Generation
+- Ingestion
+- Document Loader
+- Parsing
+- Cleaning
+- Chunking
+- Embedding
+- Indexing
+- Query
+- Retriever
+- Generator
+- Augmentation
+- Prompt Assembly
+- Post-Processing
+
+## Document Parsing & Ingestion
+- PDF Parsing
+- OCR
+- Layout Analysis
+- Table Extraction
+- Multimodal Parsing
+- Metadata Extraction
+- Deduplication
+- Document Versioning
+- Incremental Indexing
+- Re-Indexing
+- Data Freshness
+- Connectors
+- Unstructured
+- LlamaParse
+- Docling
+
+## Chunking
+- Chunk
+- Chunk Size
+- Chunk Overlap
+- Fixed-Size Chunking
+- Recursive Character Chunking
+- Sentence Chunking
+- Paragraph Chunking
+- Semantic Chunking
+- Structure-Aware Chunking
+- Markdown / Header Chunking
+- Sliding Window
+- Hierarchical Chunking
+- Parent-Child Chunking
+- Small-to-Big Retrieval
+- Sentence-Window Retrieval
+- Late Chunking
+- Contextual Chunking
+- Agentic Chunking
+- Proposition Chunking
+- Chunk Metadata
+- Token Limit
+
+## Embeddings
+- Embedding
+- Embedding Model
+- Vector
+- Dimensionality
+- Dense Embedding
+- Sparse Embedding
+- Multi-Vector Embedding
+- ColBERT
+- Late Interaction
+- Bi-Encoder
+- Matryoshka Embeddings
+- Binary Quantization
+- Scalar Quantization
+- Multilingual Embeddings
+- Multimodal Embeddings
+- Domain-Specific Embeddings
+- Fine-Tuned Embeddings
+- Embedding Drift
+- MTEB
+- text-embedding-3
+- BGE
+- E5
+- Sentence-BERT
+- Voyage
+- Cohere Embed
+- Instructor Embeddings
+
+## Similarity & Distance
+- Cosine Similarity
+- Dot Product
+- Euclidean Distance (L2)
+- Manhattan Distance
+- Inner Product
+- Hamming Distance
+- Jaccard Similarity
+- Normalization
+- Semantic Similarity
+- Similarity Threshold
+- Top-k
+
+## Vector Databases & Indexes
+- Vector Database
+- Vector Store
+- Vector Index
+- Nearest Neighbor Search (NN)
+- Approximate Nearest Neighbor (ANN)
+- Exact Search (Flat)
+- HNSW
+- IVF
+- IVF-PQ
+- Product Quantization (PQ)
+- LSH
+- Annoy
+- ScaNN
+- DiskANN
+- FAISS
+- Pinecone
+- Weaviate
+- Chroma
+- Milvus
+- Qdrant
+- pgvector
+- Elasticsearch / OpenSearch
+- Redis Vector
+- MongoDB Atlas Vector Search
+- LanceDB
+- Recall vs Latency Tradeoff
+- Index Build Time
+- Memory Footprint
+- Sharding
+- Replication
+- Metadata Filtering
+- Pre-Filtering
+- Post-Filtering
+- Namespace
+- Upsert
+- Payload
+
+## Retrieval Methods
+- Dense Retrieval
+- Sparse Retrieval
+- Hybrid Search
+- Keyword Search
+- Semantic Search
+- Lexical Search
+- BM25
+- TF-IDF
+- SPLADE
+- Reciprocal Rank Fusion (RRF)
+- Weighted Fusion
+- Maximal Marginal Relevance (MMR)
+- Multi-Vector Retrieval
+- Ensemble Retriever
+- Metadata Filtering
+- Self-Query Retriever
+- Time-Weighted Retrieval
+- Top-k Retrieval
+- Similarity Threshold
+- Graph Retrieval
+- SQL Retrieval
+- Text-to-SQL
+- Web Search Retrieval
+
+## Query Transformation
+- Query Rewriting
+- Query Expansion
+- Query Decomposition
+- Multi-Query Retrieval
+- Step-Back Prompting
+- HyDE (Hypothetical Document Embeddings)
+- Query Routing
+- Query Classification
+- Intent Detection
+- Sub-Question Query
+- Query Translation
+- Conversational Query Condensation
+- Follow-Up Question Handling
+
+## Reranking & Post-Retrieval
+- Reranking
+- Cross-Encoder
+- Bi-Encoder vs Cross-Encoder
+- Cohere Rerank
+- BGE Reranker
+- LLM Reranker
+- Listwise / Pointwise / Pairwise Reranking
+- Context Compression
+- Contextual Compression
+- Context Filtering
+- Context Reordering
+- Lost in the Middle
+- Context Stuffing
+- Map-Reduce
+- Refine
+- Stuff
+- Deduplication
+- Context Budget
+- Token Budget
+
+## Advanced RAG Patterns
+- Agentic RAG
+- Self-RAG
+- Corrective RAG (CRAG)
+- Adaptive RAG
+- Iterative Retrieval
+- Multi-Hop Retrieval
+- Multi-Hop Reasoning
+- GraphRAG
+- Knowledge Graph RAG
+- Hierarchical RAG
+- RAPTOR
+- Fusion RAG
+- Multimodal RAG
+- Cache-Augmented Generation (CAG)
+- Contextual Retrieval
+- Speculative RAG
+- Router RAG
+- Long-Context RAG
+- Memory-Augmented RAG
+- Tool-Augmented RAG
+- Text-to-SQL RAG
+- Parent-Document Retriever
+- ColPali
+- Web-Augmented RAG
+
+## Knowledge Graphs
+- Knowledge Graph
+- Entity
+- Relation
+- Triple
+- Node / Edge
+- Ontology
+- Entity Extraction
+- Relation Extraction
+- Entity Linking
+- Community Detection
+- Community Summaries
+- Neo4j
+- Cypher
+- SPARQL
+- Graph Traversal
+- Property Graph
+- Local vs Global Search
+
+## Prompting for RAG
+- System Prompt
+- Context Injection
+- Grounding Instructions
+- "Answer Only From Context"
+- Fallback / "I Don't Know"
+- Citation Prompting
+- Source Attribution
+- Prompt Template
+- Few-Shot Examples
+- Structured Output
+- Output Parser
+- Conversation History
+- Memory
+
+## Evaluation
+- Retrieval Evaluation
+- Generation Evaluation
+- End-to-End Evaluation
+- Context Precision
+- Context Recall
+- Context Relevance
+- Faithfulness
+- Answer Relevance
+- Answer Correctness
+- Groundedness
+- Hallucination Rate
+- Recall@k
+- Precision@k
+- Hit Rate
+- MRR (Mean Reciprocal Rank)
+- NDCG
+- MAP
+- F1
+- Exact Match
+- Golden Dataset
+- Ground Truth
+- Synthetic Test Set
+- LLM-as-a-Judge
+- RAGAS
+- TruLens
+- DeepEval
+- ARES
+- RAG Triad
+- BEIR
+- MTEB
+- Human Evaluation
+- A/B Testing
+- Regression Testing
+- Online vs Offline Evaluation
+
+## Failure Modes & Challenges
+- Retrieval Failure
+- Missing Content
+- Wrong Chunk
+- Low Recall
+- Low Precision
+- Lost in the Middle
+- Context Overflow
+- Noisy Context
+- Conflicting Sources
+- Outdated Information
+- Hallucination Despite Context
+- Over-Reliance on Context
+- Query-Document Mismatch
+- Vocabulary Mismatch
+- Ambiguous Query
+- Multi-Hop Failure
+- Table / Chart Failure
+- Chunk Boundary Problem
+- Embedding Mismatch
+- Cold Start
+- Latency
+- Cost
+- Scalability
+- Prompt Injection via Documents
+- Indirect Prompt Injection
+- Data Leakage
+
+## Production & Operations
+- Latency Optimization
+- Caching
+- Semantic Caching
+- Batching
+- Async Retrieval
+- Streaming
+- Cost Optimization
+- Scaling
+- Observability
+- Tracing
+- Logging
+- Monitoring
+- Feedback Loop
+- User Feedback
+- Re-Indexing Strategy
+- Data Freshness
+- Access Control
+- Row-Level Security
+- Multi-Tenancy
+- PII Redaction
+- Guardrails
+- Compliance
+- Data Governance
+- Enterprise Search
+- Permissions-Aware Retrieval
+
+## Frameworks & Tools
+- LangChain
+- LangGraph
+- LlamaIndex
+- Haystack
+- DSPy
+- Semantic Kernel
+- Vercel AI SDK
+- OpenAI File Search
+- Azure AI Search
+- Amazon Bedrock Knowledge Bases
+- Vertex AI Search
+- Cohere RAG
+- LangSmith
+- Langfuse
+- Arize Phoenix
+- Weights & Biases
+- Unstructured

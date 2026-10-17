@@ -1,0 +1,567 @@
+# Agentic AI Interview Terms
+
+## ⭐ Most Important (AI Engineer Interviews)
+- Agent vs Workflow
+- Agent Loop
+- Agentic AI vs Chatbot
+- Autonomy
+- ReAct
+- Chain-of-Thought
+- Plan-and-Execute
+- Reflection / Self-Critique
+- Task Decomposition
+- Tool Use / Function Calling
+- Tool Schema
+- Tool Selection
+- Structured Output
+- Short-Term vs Long-Term Memory
+- Context Engineering
+- Context Window Management
+- Vector Memory
+- Multi-Agent Systems
+- Orchestrator-Workers
+- Supervisor Pattern
+- Handoff
+- Prompt Chaining
+- Routing
+- Parallelization
+- Evaluator-Optimizer
+- Human-in-the-Loop
+- Model Context Protocol (MCP)
+- Agent-to-Agent (A2A)
+- LangGraph
+- LangChain
+- AutoGen
+- CrewAI
+- OpenAI Agents SDK
+- Claude Agent SDK
+- Agentic RAG
+- Computer Use
+- Coding Agents
+- Sandboxing
+- Guardrails
+- Prompt Injection
+- Indirect Prompt Injection
+- Excessive Agency
+- Least Privilege
+- Loop / Runaway Detection
+- Compounding Errors
+- Hallucination
+- Non-Determinism
+- Agent Evaluation
+- Trajectory Evaluation
+- Task Success Rate
+- SWE-bench
+- Tracing / Observability
+- Cost / Latency Tradeoff
+- Durable Execution / Checkpointing
+- Error Recovery / Retry
+
+## Fundamentals
+- AI Agent
+- Agentic AI
+- Agency
+- Autonomy
+- Levels of Autonomy
+- Goal-Directed Behavior
+- Perception
+- Reasoning
+- Planning
+- Action
+- Observation
+- Environment
+- Agent Loop
+- Sense-Think-Act
+- Workflow vs Agent
+- Assistant vs Agent
+- Chatbot vs Agent
+- Single-Agent
+- Multi-Agent
+- Autonomous Agent
+- Semi-Autonomous Agent
+- Agentic Workflow
+- Agentic System
+- Compound AI System
+- LLM-Powered Agent
+- Software Agent
+- Embodied Agent
+- Rational Agent
+- BDI (Belief-Desire-Intention)
+- Utility-Based Agent
+- Reflex Agent
+- Goal-Based Agent
+- Learning Agent
+
+## Agent Architecture Components
+- LLM (Brain)
+- Planner
+- Executor
+- Memory
+- Tools
+- Knowledge
+- Profile / Persona
+- System Prompt
+- Controller
+- Orchestrator
+- State
+- Context
+- Scratchpad
+- Policy
+- Router
+- Supervisor
+- Worker
+- Critic
+- Verifier
+- Evaluator
+- Environment Interface
+
+## Reasoning & Planning Patterns
+- Chain-of-Thought (CoT)
+- Tree-of-Thought (ToT)
+- Graph-of-Thought
+- ReAct (Reason + Act)
+- Plan-and-Execute
+- Plan-and-Solve
+- ReWOO
+- Reflexion
+- Self-Reflection
+- Self-Critique
+- Self-Refine
+- Self-Consistency
+- Least-to-Most Prompting
+- Task Decomposition
+- Subgoal Decomposition
+- Hierarchical Planning
+- Replanning
+- Look-Ahead
+- Monte Carlo Tree Search (MCTS)
+- LATS
+- Backtracking
+- Test-Time Compute
+- Extended Thinking
+- Reasoning Model
+- Thought-Action-Observation
+- Scratchpad Reasoning
+- Verification Step
+- LLM Compiler
+- Program-Aided Language Models (PAL)
+- Code as Action
+
+## Agentic Design Patterns
+- Reflection
+- Tool Use
+- Planning
+- Multi-Agent Collaboration
+- Routing
+- Prompt Chaining
+- Parallelization
+- Orchestrator-Workers
+- Evaluator-Optimizer
+- Sequential Pattern
+- Hierarchical Pattern
+- Supervisor Pattern
+- Swarm
+- Handoff
+- Debate
+- Role-Playing
+- Mixture of Agents
+- Human-in-the-Loop
+- Human-on-the-Loop
+- Generator-Critic
+- Plan-Act-Verify
+- Fallback Pattern
+- Retry Pattern
+- Escalation
+
+## Tool Use & Function Calling
+- Tool
+- Tool Use
+- Function Calling
+- Tool Calling
+- Tool Schema
+- JSON Schema
+- Tool Description
+- Tool Selection
+- Tool Choice (auto / required / none)
+- Parallel Tool Calls
+- Tool Result
+- Tool Error Handling
+- Structured Output
+- API Integration
+- Web Search Tool
+- Code Interpreter
+- Code Execution
+- Sandbox
+- Browser Tool
+- Computer Use
+- File System Tool
+- Database Tool
+- Text-to-SQL
+- Retrieval Tool
+- Tool Learning
+- Toolformer
+- Gorilla
+- Tool Retrieval
+- Tool Overload
+- Idempotency
+- Side Effects
+- Dry Run
+- Tool Permissions
+- Allowlist / Denylist
+
+## Memory
+- Short-Term Memory
+- Long-Term Memory
+- Working Memory
+- Episodic Memory
+- Semantic Memory
+- Procedural Memory
+- Conversation History
+- Context Window
+- Context Management
+- Context Engineering
+- Context Compaction
+- Summarization
+- Sliding Window
+- Memory Store
+- Vector Memory
+- Entity Memory
+- Knowledge Graph Memory
+- Memory Retrieval
+- Memory Consolidation
+- Memory Eviction
+- Forgetting
+- Reflection Memory
+- Scratchpad
+- State Persistence
+- Checkpointing
+- Thread
+- Session
+- Long-Horizon Tasks
+- MemGPT
+- Mem0
+- Generative Agents
+
+## Multi-Agent Systems
+- Multi-Agent System (MAS)
+- Agent Communication
+- Message Passing
+- Shared State
+- Shared Memory
+- Blackboard
+- Orchestration
+- Choreography
+- Supervisor Agent
+- Manager Agent
+- Specialist Agent
+- Sub-Agent
+- Handoff
+- Delegation
+- Coordination
+- Collaboration
+- Competition
+- Debate
+- Consensus
+- Voting
+- Role Assignment
+- Agent Roles
+- Hierarchical Agents
+- Swarm Intelligence
+- Agent Society
+- Emergent Behavior
+- Conflict Resolution
+- Task Allocation
+- Parallel Agents
+- Agent Topology
+- Context Isolation
+- MetaGPT
+- ChatDev
+- CAMEL
+- AutoGen
+- CrewAI
+- OpenAI Swarm
+- Agents SDK
+
+## Protocols & Standards
+- Model Context Protocol (MCP)
+- MCP Server
+- MCP Client
+- MCP Host
+- MCP Tools / Resources / Prompts
+- Agent-to-Agent Protocol (A2A)
+- Agent Communication Protocol (ACP)
+- Agent Network Protocol (ANP)
+- OpenAPI
+- JSON-RPC
+- OAuth
+- Agent Card
+- Capability Discovery
+- Interoperability
+- Function Calling Spec
+- AGENTS.md
+- llms.txt
+
+## Frameworks & Platforms
+- LangChain
+- LangGraph
+- LlamaIndex
+- AutoGen
+- CrewAI
+- Semantic Kernel
+- OpenAI Agents SDK
+- OpenAI Assistants API
+- Claude Agent SDK
+- Google ADK
+- Amazon Bedrock Agents
+- Azure AI Agent Service
+- Vertex AI Agent Builder
+- Pydantic AI
+- Smolagents
+- DSPy
+- Haystack
+- Letta
+- AutoGPT
+- BabyAGI
+- AgentGPT
+- OpenHands
+- Devin
+- Manus
+- n8n
+- Zapier
+- Dify
+- Flowise
+
+## Graph & Workflow Orchestration
+- State Machine
+- Directed Acyclic Graph (DAG)
+- Cyclic Graph
+- Node
+- Edge
+- Conditional Edge
+- State Graph
+- Reducer
+- Checkpointer
+- Durable Execution
+- Workflow Engine
+- Temporal
+- Airflow
+- Event-Driven
+- Async Execution
+- Parallel Execution
+- Fan-Out / Fan-In
+- Map-Reduce
+- Retry Policy
+- Timeout
+- Interrupt
+- Resume
+- Time Travel
+- Streaming
+
+## Computer Use & Coding Agents
+- Computer Use Agent
+- Browser Agent
+- GUI Agent
+- Screen Understanding
+- Screenshot Grounding
+- DOM Understanding
+- Accessibility Tree
+- Playwright
+- Selenium
+- Web Navigation
+- Web Agent
+- Operator
+- Coding Agent
+- Agentic Coding
+- Vibe Coding
+- Repo-Level Understanding
+- SWE-bench
+- Code Execution Sandbox
+- Test-Driven Agent
+- Pull Request Agent
+- Terminal Agent
+- Voice Agent
+- Robotic Process Automation (RPA)
+- Hooks
+- Skills
+- Slash Commands
+- Subagents
+
+## Human-Agent Interaction
+- Human-in-the-Loop (HITL)
+- Human-on-the-Loop
+- Approval Gate
+- Confirmation Step
+- Escalation
+- Handoff to Human
+- Interrupt
+- Feedback
+- Steering
+- Permission Prompt
+- Autonomy Slider
+- Trust Calibration
+- Transparency
+- Explainability
+- Audit Trail
+- Override
+- Kill Switch
+
+## Safety, Security & Guardrails
+- Guardrails
+- Input Guardrails
+- Output Guardrails
+- Tool Guardrails
+- Prompt Injection
+- Indirect Prompt Injection
+- Jailbreak
+- Tool Poisoning
+- Excessive Agency
+- Confused Deputy
+- Least Privilege
+- Sandboxing
+- Isolation
+- Permission Scoping
+- Credential Management
+- Secrets Handling
+- Rate Limiting
+- Budget Limits
+- Loop Detection
+- Infinite Loop
+- Runaway Agent
+- Data Exfiltration
+- Lethal Trifecta
+- Red Teaming
+- Safe Exploration
+- Reversibility
+- Dry Run
+- Audit Logging
+- Alignment
+- Misalignment
+- Goal Misgeneralization
+- Reward Hacking
+- Specification Gaming
+- Deceptive Behavior
+- Alignment Faking
+- Agent Identity
+- Authorization
+- Authentication
+
+## Evaluation
+- Agent Evaluation
+- Task Success Rate
+- Pass@k
+- Trajectory Evaluation
+- Step-Level Evaluation
+- Tool Call Accuracy
+- Plan Quality
+- Goal Completion
+- Efficiency
+- Cost per Task
+- Latency per Task
+- Token Usage
+- Number of Steps
+- Reliability
+- Robustness
+- Consistency
+- Safety Evaluation
+- LLM-as-a-Judge
+- Human Evaluation
+- Simulated Users
+- Sandboxed Environment
+- Regression Testing
+- Evals-Driven Development
+- AgentBench
+- SWE-bench
+- GAIA
+- WebArena
+- OSWorld
+- τ-bench (Tau-bench)
+- ToolBench
+- Mind2Web
+- HumanEval
+- Terminal-Bench
+- Benchmark Contamination
+
+## Observability & Operations
+- Tracing
+- Spans
+- Logging
+- Monitoring
+- Observability
+- Debugging Agents
+- Replay
+- LangSmith
+- Langfuse
+- Arize Phoenix
+- OpenTelemetry
+- AgentOps
+- Cost Tracking
+- Token Budget
+- Caching
+- Prompt Caching
+- Error Recovery
+- Retry
+- Fallback Model
+- Model Routing
+- Timeout Handling
+- Idempotency
+- Durable State
+- Scaling
+- Deployment
+- Versioning
+- Agent Registry
+
+## Challenges & Failure Modes
+- Hallucination
+- Compounding Errors
+- Error Propagation
+- Looping
+- Getting Stuck
+- Tool Misuse
+- Wrong Tool Selection
+- Parameter Errors
+- Context Overflow
+- Context Rot
+- Long-Horizon Failure
+- Planning Failure
+- Goal Drift
+- Over-Autonomy
+- Under-Specification
+- Non-Determinism
+- Reliability
+- Latency
+- Cost
+- Observability Gap
+- Evaluation Difficulty
+- Security Risk
+- Coordination Overhead
+- Role Confusion
+- Cascading Failure
+
+## Emerging Concepts
+- Agentic Commerce
+- Agent Marketplaces
+- Agent Economy
+- Agent Identity
+- Agent Payments
+- Digital Workers
+- AI Employees
+- Voice Agents
+- Embodied Agents
+- Physical AI
+- World Models
+- Self-Improving Agents
+- Agent Skills
+- Open-Ended Agents
+- Long-Running Agents
+- Background Agents
+- Ambient Agents
+- Proactive Agents
+- Agentic RAG
+- Deep Research Agents
+- AI Scientist
+- Reinforcement Learning for Agents
+- RLVR
+- Agent Training Environments
+- Gym Environments
+- Vibe Coding
+- Context Engineering

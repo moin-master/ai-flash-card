@@ -1,0 +1,1076 @@
+# AI Interview Terms & Vocabulary
+
+## Core Concepts
+- Artificial Intelligence (AI)
+- Machine Learning (ML)
+- Deep Learning (DL)
+- Neural Network
+- Generative AI
+- Narrow AI / Weak AI
+- General AI (AGI) / Strong AI
+- Superintelligence
+- Foundation Model
+- Large Language Model (LLM)
+- Small Language Model (SLM)
+- Multimodal Model
+- Reasoning Model
+- Expert Systems
+- Symbolic AI
+- Turing Test
+- Algorithm
+- Heuristic
+- Inference
+- Training
+- Model
+- Parameter
+- Feature
+- Label
+- Dataset
+- Ground Truth
+
+## Learning Paradigms
+- Supervised Learning
+- Unsupervised Learning
+- Semi-Supervised Learning
+- Self-Supervised Learning
+- Reinforcement Learning (RL)
+- Transfer Learning
+- Few-Shot Learning
+- Zero-Shot Learning
+- One-Shot Learning
+- Meta-Learning
+- Online Learning
+- Batch Learning
+- Federated Learning
+- Active Learning
+- Curriculum Learning
+- Contrastive Learning
+- Multi-Task Learning
+- Continual Learning
+- Imitation Learning
+- Inverse Reinforcement Learning
+
+## ML Tasks
+- Classification
+- Regression
+- Clustering
+- Dimensionality Reduction
+- Anomaly Detection
+- Object Detection
+- Image Segmentation
+- Semantic Segmentation
+- Instance Segmentation
+- Named Entity Recognition (NER)
+- Sentiment Analysis
+- Machine Translation
+- Text Summarization
+- Question Answering
+- Speech Recognition
+- Text-to-Speech (TTS)
+- Recommendation System
+- Time Series Forecasting
+- Optical Character Recognition (OCR)
+- Image Captioning
+
+## Classic ML Algorithms
+- Linear Regression
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- Gradient Boosting
+- XGBoost
+- LightGBM
+- CatBoost
+- AdaBoost
+- Bagging
+- Boosting
+- Stacking
+- Ensemble Learning
+- Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
+- Naive Bayes
+- K-Means
+- Hierarchical Clustering
+- DBSCAN
+- Gaussian Mixture Model (GMM)
+- Principal Component Analysis (PCA)
+- t-SNE
+- UMAP
+- Linear Discriminant Analysis (LDA)
+- Hidden Markov Model (HMM)
+- Markov Chain
+- Apriori
+- Isolation Forest
+
+## Data & Preprocessing
+- Data Cleaning
+- Data Preprocessing
+- Feature Engineering
+- Feature Selection
+- Feature Extraction
+- Feature Scaling
+- Normalization
+- Standardization
+- Min-Max Scaling
+- One-Hot Encoding
+- Label Encoding
+- Target Encoding
+- Embedding
+- Missing Values
+- Imputation
+- Outlier
+- Data Augmentation
+- Data Leakage
+- Class Imbalance
+- SMOTE
+- Oversampling
+- Undersampling
+- Train/Validation/Test Split
+- Stratified Sampling
+- Data Drift
+- Concept Drift
+- Data Pipeline
+- ETL
+- Data Labeling / Annotation
+- Synthetic Data
+- Curse of Dimensionality
+
+## Model Training & Optimization
+- Loss Function
+- Cost Function
+- Objective Function
+- Gradient Descent
+- Stochastic Gradient Descent (SGD)
+- Mini-Batch Gradient Descent
+- Adam
+- AdamW
+- RMSprop
+- Adagrad
+- Momentum
+- Learning Rate
+- Learning Rate Scheduler
+- Warmup
+- Backpropagation
+- Forward Pass
+- Backward Pass
+- Epoch
+- Batch Size
+- Iteration
+- Gradient
+- Vanishing Gradient
+- Exploding Gradient
+- Gradient Clipping
+- Convergence
+- Local Minima
+- Global Minima
+- Saddle Point
+- Hyperparameter
+- Hyperparameter Tuning
+- Grid Search
+- Random Search
+- Bayesian Optimization
+- Early Stopping
+- Checkpointing
+- Mixed Precision Training
+- Gradient Accumulation
+- Distributed Training
+- Data Parallelism
+- Model Parallelism
+- Pipeline Parallelism
+- Tensor Parallelism
+- ZeRO
+- FSDP
+- DeepSpeed
+
+## Overfitting & Generalization
+- Overfitting
+- Underfitting
+- Bias
+- Variance
+- Bias-Variance Tradeoff
+- Generalization
+- Regularization
+- L1 Regularization (Lasso)
+- L2 Regularization (Ridge)
+- Elastic Net
+- Dropout
+- Batch Normalization
+- Layer Normalization
+- Weight Decay
+- Cross-Validation
+- K-Fold Cross-Validation
+- Leave-One-Out Cross-Validation
+- Holdout Set
+- Occam's Razor
+- No Free Lunch Theorem
+
+## Evaluation Metrics
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- Specificity
+- Sensitivity
+- Confusion Matrix
+- True Positive
+- False Positive
+- True Negative
+- False Negative
+- ROC Curve
+- AUC
+- Precision-Recall Curve
+- Log Loss
+- Cross-Entropy
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Error (MAE)
+- R-Squared
+- Perplexity
+- BLEU
+- ROUGE
+- METEOR
+- BERTScore
+- Exact Match
+- IoU (Intersection over Union)
+- mAP (Mean Average Precision)
+- Top-k Accuracy
+- Cohen's Kappa
+- Matthews Correlation Coefficient
+- Baseline
+- Benchmark
+- MMLU
+- HumanEval
+- GSM8K
+- HellaSwag
+- TruthfulQA
+- SWE-bench
+- LMSYS Chatbot Arena
+- LLM-as-a-Judge
+
+## Activation & Loss Functions
+- Sigmoid
+- Tanh
+- ReLU
+- Leaky ReLU
+- GELU
+- Swish / SiLU
+- SwiGLU
+- Softmax
+- Softplus
+- Hinge Loss
+- Huber Loss
+- Focal Loss
+- Triplet Loss
+- Contrastive Loss
+- KL Divergence
+- Binary Cross-Entropy
+- Categorical Cross-Entropy
+
+## Neural Network Architectures
+- Perceptron
+- Multilayer Perceptron (MLP)
+- Feedforward Neural Network
+- Convolutional Neural Network (CNN)
+- Recurrent Neural Network (RNN)
+- Long Short-Term Memory (LSTM)
+- Gated Recurrent Unit (GRU)
+- Bidirectional RNN
+- Autoencoder
+- Variational Autoencoder (VAE)
+- Denoising Autoencoder
+- Generative Adversarial Network (GAN)
+- Diffusion Model
+- Latent Diffusion
+- Transformer
+- Encoder-Decoder
+- Attention Mechanism
+- Self-Attention
+- Cross-Attention
+- Multi-Head Attention
+- Masked Attention
+- Graph Neural Network (GNN)
+- Residual Network (ResNet)
+- Skip Connection
+- U-Net
+- VGG
+- Inception
+- EfficientNet
+- MobileNet
+- YOLO
+- R-CNN / Faster R-CNN
+- Vision Transformer (ViT)
+- Siamese Network
+- Capsule Network
+- Neural ODE
+- State Space Model
+- Mamba
+- Mixture of Experts (MoE)
+- Hopfield Network
+- Boltzmann Machine
+- Radial Basis Function Network
+- Kolmogorov-Arnold Network (KAN)
+
+## CNN Terms
+- Convolution
+- Kernel / Filter
+- Stride
+- Padding
+- Pooling
+- Max Pooling
+- Average Pooling
+- Feature Map
+- Receptive Field
+- Dilated Convolution
+- Depthwise Separable Convolution
+- Transposed Convolution
+- 1x1 Convolution
+- Global Average Pooling
+
+## Transformer & LLM Internals
+- Token
+- Tokenization
+- Tokenizer
+- Byte-Pair Encoding (BPE)
+- WordPiece
+- SentencePiece
+- Vocabulary
+- Embedding Layer
+- Positional Encoding
+- Rotary Positional Embedding (RoPE)
+- ALiBi
+- Query, Key, Value (QKV)
+- Scaled Dot-Product Attention
+- Attention Head
+- Feed-Forward Network
+- Residual Connection
+- Layer Norm
+- RMSNorm
+- Pre-Norm / Post-Norm
+- Context Window
+- Context Length
+- KV Cache
+- Flash Attention
+- Grouped-Query Attention (GQA)
+- Multi-Query Attention (MQA)
+- Sparse Attention
+- Sliding Window Attention
+- Decoder-Only
+- Encoder-Only
+- Autoregressive
+- Masked Language Modeling (MLM)
+- Causal Language Modeling
+- Next-Token Prediction
+- Logits
+- Softmax Temperature
+- Hidden State
+- Latent Space
+- Scaling Laws
+- Chinchilla
+- Emergent Abilities
+- Parameter Count
+- Billion Parameters
+- Dense Model
+- Sparse Model
+- Router
+- Expert
+- Speculative Decoding
+- Multi-Token Prediction
+
+## Popular Models & Families
+- GPT
+- ChatGPT
+- BERT
+- RoBERTa
+- DistilBERT
+- ALBERT
+- T5
+- BART
+- XLNet
+- LLaMA
+- Mistral
+- Mixtral
+- Gemini
+- Gemma
+- Claude
+- PaLM
+- Falcon
+- Qwen
+- DeepSeek
+- Phi
+- CLIP
+- DALL·E
+- Stable Diffusion
+- Midjourney
+- Whisper
+- Sora
+- Flux
+- SAM (Segment Anything)
+- AlphaGo
+- AlphaFold
+- Word2Vec
+- GloVe
+- FastText
+- ELMo
+
+## Generation & Decoding
+- Greedy Decoding
+- Beam Search
+- Sampling
+- Temperature
+- Top-k Sampling
+- Top-p (Nucleus) Sampling
+- Min-p Sampling
+- Repetition Penalty
+- Frequency Penalty
+- Presence Penalty
+- Stop Sequence
+- Max Tokens
+- Seed
+- Deterministic Output
+- Hallucination
+- Confabulation
+- Grounding
+- Constrained Decoding
+- Structured Output
+- JSON Mode
+- Logit Bias
+- Streaming
+
+## Prompting
+- Prompt
+- Prompt Engineering
+- System Prompt
+- User Prompt
+- Assistant Message
+- Zero-Shot Prompting
+- One-Shot Prompting
+- Few-Shot Prompting
+- In-Context Learning
+- Chain-of-Thought (CoT)
+- Tree-of-Thought (ToT)
+- Graph-of-Thought
+- Self-Consistency
+- ReAct
+- Reflexion
+- Role Prompting
+- Prompt Template
+- Prompt Chaining
+- Meta-Prompting
+- Instruction Following
+- Prompt Injection
+- Jailbreak
+- Prompt Leaking
+- Negative Prompting
+- Context Engineering
+- Prompt Caching
+- Prefill
+- Extended Thinking
+- Test-Time Compute
+
+## Fine-Tuning & Adaptation
+- Pre-training
+- Fine-Tuning
+- Full Fine-Tuning
+- Instruction Tuning
+- Supervised Fine-Tuning (SFT)
+- Parameter-Efficient Fine-Tuning (PEFT)
+- LoRA
+- QLoRA
+- Adapters
+- Prefix Tuning
+- Prompt Tuning
+- P-Tuning
+- Catastrophic Forgetting
+- Domain Adaptation
+- Continued Pre-training
+- Model Merging
+- Task Vector
+- Distillation
+- Knowledge Distillation
+- Teacher-Student Model
+- Pruning
+- Quantization
+- Post-Training Quantization (PTQ)
+- Quantization-Aware Training (QAT)
+- INT8 / INT4
+- FP16 / BF16 / FP8
+- GPTQ
+- AWQ
+- GGUF
+- Sparsity
+- Weight Sharing
+
+## Alignment & Safety
+- Alignment
+- RLHF (Reinforcement Learning from Human Feedback)
+- RLAIF
+- DPO (Direct Preference Optimization)
+- PPO (Proximal Policy Optimization)
+- GRPO
+- Reward Model
+- Reward Hacking
+- Preference Data
+- Constitutional AI
+- Red Teaming
+- Guardrails
+- Content Moderation
+- Safety Filter
+- Refusal
+- Sycophancy
+- Model Collapse
+- AI Safety
+- AI Ethics
+- Responsible AI
+- Explainability (XAI)
+- Interpretability
+- Mechanistic Interpretability
+- Transparency
+- Fairness
+- Algorithmic Bias
+- Adversarial Attack
+- Adversarial Example
+- Data Poisoning
+- Model Inversion
+- Membership Inference
+- Backdoor Attack
+- Differential Privacy
+- Privacy-Preserving ML
+- Watermarking
+- Deepfake
+- Copyright
+- Black Box
+- White Box
+- Trustworthy AI
+- AI Governance
+- EU AI Act
+- NIST AI RMF
+- Model Card
+- Datasheet for Datasets
+- SHAP
+- LIME
+- Grad-CAM
+- Saliency Map
+- Counterfactual Explanation
+- Superalignment
+- Scalable Oversight
+
+## RAG, Retrieval & Vector Search
+- Retrieval-Augmented Generation (RAG)
+- Vector Database
+- Vector Store
+- Embedding Model
+- Semantic Search
+- Keyword Search
+- Hybrid Search
+- BM25
+- TF-IDF
+- Dense Retrieval
+- Sparse Retrieval
+- Reranking
+- Cross-Encoder
+- Bi-Encoder
+- Chunking
+- Chunk Size
+- Chunk Overlap
+- Cosine Similarity
+- Euclidean Distance
+- Dot Product
+- Nearest Neighbor Search
+- Approximate Nearest Neighbor (ANN)
+- HNSW
+- IVF
+- Product Quantization
+- FAISS
+- Pinecone
+- Weaviate
+- Chroma
+- Milvus
+- Qdrant
+- pgvector
+- Query Rewriting
+- HyDE
+- Multi-Query Retrieval
+- Parent-Document Retrieval
+- Contextual Retrieval
+- Knowledge Graph
+- GraphRAG
+- Agentic RAG
+- Citation
+- Grounded Generation
+- Recall@k
+- MRR
+- NDCG
+- Knowledge Base
+- Ontology
+
+## Agents & Tooling
+- AI Agent
+- Agentic AI
+- Multi-Agent System
+- Tool Use
+- Function Calling
+- Planning
+- Memory (Short-Term / Long-Term)
+- Orchestration
+- Workflow
+- Router
+- Human-in-the-Loop
+- Autonomous Agent
+- Agent Loop
+- Subagent
+- Model Context Protocol (MCP)
+- Agent-to-Agent (A2A)
+- Computer Use
+- Code Interpreter
+- Sandbox
+- LangChain
+- LangGraph
+- LlamaIndex
+- AutoGen
+- CrewAI
+- Semantic Kernel
+- OpenAI Assistants API
+- Claude Agent SDK
+- Plugins
+- Skills
+- Hooks
+- Tool Schema
+- Reflection
+- Self-Critique
+- Task Decomposition
+- Goal-Directed Behavior
+- Guardrail
+- Evals
+
+## Reinforcement Learning Terms
+- Agent
+- Environment
+- State
+- Action
+- Reward
+- Policy
+- Value Function
+- Q-Function
+- Q-Learning
+- Deep Q-Network (DQN)
+- SARSA
+- Policy Gradient
+- REINFORCE
+- Actor-Critic
+- A2C / A3C
+- TRPO
+- PPO
+- DDPG
+- SAC
+- Markov Decision Process (MDP)
+- Bellman Equation
+- Discount Factor
+- Exploration vs Exploitation
+- Epsilon-Greedy
+- Monte Carlo Methods
+- Temporal Difference (TD)
+- On-Policy / Off-Policy
+- Model-Based / Model-Free
+- Experience Replay
+- Multi-Armed Bandit
+- Reward Shaping
+- Sparse Reward
+- Episode
+- Trajectory
+- Advantage Function
+- Self-Play
+- Multi-Agent RL
+- RLVR
+
+## Computer Vision
+- Image Classification
+- Object Recognition
+- Face Recognition
+- Pose Estimation
+- Optical Flow
+- Edge Detection
+- Feature Detection
+- SIFT
+- HOG
+- Bounding Box
+- Anchor Box
+- Non-Maximum Suppression (NMS)
+- Image Generation
+- Image-to-Image
+- Text-to-Image
+- Text-to-Video
+- Inpainting
+- Outpainting
+- Super-Resolution
+- Style Transfer
+- Depth Estimation
+- 3D Reconstruction
+- NeRF
+- Gaussian Splatting
+- Visual Question Answering (VQA)
+- Vision-Language Model (VLM)
+- ControlNet
+- Latent Diffusion
+- Denoising
+- Classifier-Free Guidance
+- Scheduler (Diffusion)
+- Noise Schedule
+
+## Natural Language Processing (NLP)
+- Tokenization
+- Stemming
+- Lemmatization
+- Stop Words
+- Bag of Words
+- N-gram
+- TF-IDF
+- Word Embedding
+- Contextual Embedding
+- Part-of-Speech (POS) Tagging
+- Dependency Parsing
+- Constituency Parsing
+- Coreference Resolution
+- Named Entity Recognition
+- Topic Modeling
+- LDA (Latent Dirichlet Allocation)
+- Language Model
+- Seq2Seq
+- Text Generation
+- Text Classification
+- Intent Detection
+- Slot Filling
+- Dialogue System
+- Chatbot
+- Semantic Similarity
+- Paraphrase Detection
+- Text Entailment
+- Natural Language Understanding (NLU)
+- Natural Language Generation (NLG)
+- Machine Reading Comprehension
+- Information Extraction
+- Relation Extraction
+- Speech-to-Text (ASR)
+- Word Error Rate (WER)
+- Multilingual Model
+- Low-Resource Language
+- Code-Switching
+
+## Statistics & Math Foundations
+- Probability
+- Conditional Probability
+- Bayes' Theorem
+- Prior
+- Posterior
+- Likelihood
+- Maximum Likelihood Estimation (MLE)
+- Maximum A Posteriori (MAP)
+- Bayesian Inference
+- Probability Distribution
+- Gaussian / Normal Distribution
+- Bernoulli Distribution
+- Binomial Distribution
+- Poisson Distribution
+- Uniform Distribution
+- Mean / Median / Mode
+- Variance
+- Standard Deviation
+- Covariance
+- Correlation
+- Entropy
+- Cross-Entropy
+- Mutual Information
+- KL Divergence
+- Jensen-Shannon Divergence
+- Central Limit Theorem
+- Law of Large Numbers
+- Hypothesis Testing
+- p-value
+- Confidence Interval
+- A/B Testing
+- Statistical Significance
+- Type I / Type II Error
+- Linear Algebra
+- Vector
+- Matrix
+- Tensor
+- Dot Product
+- Matrix Multiplication
+- Eigenvalue
+- Eigenvector
+- Singular Value Decomposition (SVD)
+- Norm (L1 / L2)
+- Jacobian
+- Hessian
+- Chain Rule
+- Partial Derivative
+- Convex Function
+- Non-Convex Optimization
+- Lagrange Multiplier
+- Monte Carlo
+- MCMC
+- Markov Property
+- Sampling Distribution
+
+## MLOps & Deployment
+- MLOps
+- LLMOps
+- AIOps
+- Model Deployment
+- Model Serving
+- Model Registry
+- Model Versioning
+- Experiment Tracking
+- Feature Store
+- CI/CD for ML
+- Pipeline
+- Orchestration
+- Monitoring
+- Observability
+- Model Drift
+- Retraining
+- Shadow Deployment
+- Canary Deployment
+- A/B Testing
+- Blue-Green Deployment
+- Batch Inference
+- Real-Time Inference
+- Online Inference
+- Edge AI
+- On-Device AI
+- TinyML
+- Latency
+- Throughput
+- Time to First Token (TTFT)
+- Tokens per Second
+- Cold Start
+- Autoscaling
+- Rate Limiting
+- Caching
+- Semantic Caching
+- Batching
+- Continuous Batching
+- PagedAttention
+- vLLM
+- TensorRT
+- ONNX
+- TorchServe
+- Triton Inference Server
+- MLflow
+- Kubeflow
+- Weights & Biases
+- DVC
+- Airflow
+- Docker
+- Kubernetes
+- Reproducibility
+- Cost Optimization
+- Model Compression
+- Inference Optimization
+- API
+- Endpoint
+- SLA / SLO
+
+## Hardware & Infrastructure
+- CPU
+- GPU
+- TPU
+- NPU
+- FPGA
+- ASIC
+- CUDA
+- cuDNN
+- Tensor Core
+- VRAM
+- HBM
+- NVLink
+- InfiniBand
+- FLOPs
+- TFLOPS
+- Memory Bandwidth
+- Compute-Bound
+- Memory-Bound
+- Cluster
+- Node
+- Distributed Computing
+- Cloud Computing
+- AWS SageMaker
+- Azure ML
+- Google Vertex AI
+- Bedrock
+- Hugging Face
+- Ollama
+- LM Studio
+- llama.cpp
+- Spot Instances
+- Data Center
+- Energy Efficiency
+
+## Frameworks & Libraries
+- Python
+- NumPy
+- Pandas
+- SciPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- TensorFlow
+- Keras
+- PyTorch
+- JAX
+- Hugging Face Transformers
+- Datasets
+- Tokenizers
+- Accelerate
+- PEFT
+- TRL
+- OpenCV
+- spaCy
+- NLTK
+- Gensim
+- FastAPI
+- Flask
+- Streamlit
+- Gradio
+- Jupyter Notebook
+- Colab
+- ONNX Runtime
+- Ray
+- Dask
+- Spark / PySpark
+- Polars
+- Optuna
+- Lightning (PyTorch Lightning)
+
+## AI Product & Business Terms
+- Use Case
+- Proof of Concept (PoC)
+- MVP
+- Time to Market
+- ROI
+- Build vs Buy
+- Open Source vs Closed Source
+- Open Weights
+- API-based Model
+- Self-Hosted
+- Vendor Lock-In
+- Fine-Tune vs RAG
+- Total Cost of Ownership (TCO)
+- Token Cost
+- Pricing per Token
+- Rate Limits
+- SLA
+- Data Privacy
+- Data Governance
+- Compliance
+- GDPR
+- HIPAA
+- SOC 2
+- PII
+- Data Residency
+- Copilot
+- Assistant
+- Chatbot
+- AI-Native
+- Wrapper
+- Moat
+- Productization
+- Human Oversight
+- Automation
+- Augmentation
+- Digital Transformation
+- Prompt-as-Product
+
+## Data Science & Analytics (often paired)
+- Exploratory Data Analysis (EDA)
+- Data Visualization
+- Data Wrangling
+- Data Mining
+- Big Data
+- Data Warehouse
+- Data Lake
+- Lakehouse
+- SQL
+- NoSQL
+- Feature Importance
+- Correlation vs Causation
+- Causal Inference
+- Confounding Variable
+- Simpson's Paradox
+- Sampling Bias
+- Selection Bias
+- Survivorship Bias
+- Pipeline Leakage
+- KPI
+- Dashboard
+- Business Intelligence (BI)
+
+## Classic Interview Questions Keywords
+- Bias-Variance Tradeoff
+- Overfitting vs Underfitting
+- Precision vs Recall
+- Bagging vs Boosting
+- Generative vs Discriminative
+- Parametric vs Non-Parametric
+- Lazy vs Eager Learning
+- Hard vs Soft Margin
+- Kernel Trick
+- Curse of Dimensionality
+- Cold Start Problem
+- Exploration vs Exploitation
+- Batch vs Layer Normalization
+- Encoder vs Decoder
+- RNN vs Transformer
+- Fine-Tuning vs RAG vs Prompting
+- Pre-training vs Fine-tuning
+- Online vs Offline Evaluation
+- Latency vs Throughput
+- Cost vs Quality
+- Open vs Closed Models
+- Why Attention
+- Why Residual Connections
+- Why Normalization
+- Why Dropout
+- Why Learning Rate Matters
+- Why Embeddings
+- Why Hallucination Happens
+- Why Quantize
+
+## Emerging / Trending (2024–2026)
+- Agentic Workflows
+- Reasoning Models
+- Test-Time Scaling
+- Inference-Time Compute
+- Chain-of-Thought Reasoning
+- Mixture of Experts
+- Long Context
+- Context Caching
+- Multimodal Agents
+- World Models
+- Synthetic Data Generation
+- Small Language Models
+- On-Device LLM
+- Model Context Protocol (MCP)
+- Vibe Coding
+- AI Coding Assistants
+- Agentic Coding
+- Computer-Use Agents
+- Voice Agents
+- Embodied AI
+- Robotics Foundation Models
+- Physical AI
+- Sovereign AI
+- AI Regulation
+- Open-Weight Models
+- Distillation at Scale
+- RL with Verifiable Rewards
+- Evals-Driven Development
+- AI Observability
+- Guardrails Frameworks
+- Prompt Caching
+- Structured Outputs
+- Tool-Use Benchmarks
+- Memory Systems for Agents
+- Neurosymbolic AI
+- AI Scientist
+- Alignment Faking
+- AI Interpretability

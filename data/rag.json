@@ -1,0 +1,57 @@
+[
+  {
+    "id": "rag-vs-finetuning",
+    "term": "RAG vs Fine-Tuning",
+    "tag": "Core idea",
+    "explain": "**RAG** (Retrieval-Augmented Generation) keeps the model unchanged and injects **external knowledge** into the prompt at **query time**. **Fine-tuning** updates the model's **weights** with training data to change its **behavior, style or skills**. Use RAG for **fresh or private facts**, and fine-tuning for **how the model responds**.",
+    "example": [
+      "HR bot: policies change monthly → **RAG**. Just update the documents, no retraining.",
+      "Bot must always reply in a strict legal tone → **fine-tune**.",
+      "Best practice: start with **RAG** (cheaper, easy to update), add fine-tuning only if needed."
+    ]
+  },
+  {
+    "id": "rag-pipeline",
+    "term": "RAG Pipeline",
+    "tag": "Core idea",
+    "explain": "A RAG pipeline has three stages: **Indexing** (chunk, embed and store documents in a **vector database**), **Retrieval** (find the **top-k** most relevant chunks for the query), and **Generation** (the LLM answers using the retrieved **context**). Indexing runs **offline**; retrieval and generation run **online** per question.",
+    "example": [
+      "**Index:** load 500 help-center articles into a vector database.",
+      "**Retrieve:** user asks 'How do I get a refund?' → fetch the 3 best articles.",
+      "**Generate:** the LLM writes a clear answer from those articles, with sources."
+    ]
+  },
+  {
+    "id": "hallucination",
+    "term": "Hallucination",
+    "tag": "Problem",
+    "explain": "**Hallucination** is when an LLM generates output that sounds **fluent and confident** but is **factually wrong or made up**. It happens because the model predicts the **next likely token**, not the truth. **RAG** and **grounding** reduce it by supplying real source text.",
+    "example": [
+      "Support bot invents a '60-day refund policy' that does not exist.",
+      "Coding assistant calls a **function that is not in the library**.",
+      "Fix: give the model the **real policy doc** and tell it to answer only from it."
+    ]
+  },
+  {
+    "id": "grounding",
+    "term": "Grounding",
+    "tag": "Fix",
+    "explain": "**Grounding** means tying the model's answer to **trusted source data** instead of its internal memory. Every claim should be **traceable to a document**. It is done by adding **retrieved context** to the prompt, instructing the model to **answer only from it**, and showing **citations**.",
+    "example": [
+      "Prompt rule: 'Answer **only from the context**. If it is missing, say **I don't know**.'",
+      "Legal assistant shows the **exact contract page** for each answer.",
+      "Users trust it because they can **click the source**."
+    ]
+  },
+  {
+    "id": "chunking",
+    "term": "Chunking",
+    "tag": "Indexing",
+    "explain": "**Chunking** is splitting large documents into smaller pieces (**chunks**) before **embedding** and storing them. Good chunks are small enough for **precise retrieval** and to fit the **context window**, but big enough to keep their **meaning**. Common settings are **chunk size** and **overlap**.",
+    "example": [
+      "A 100-page PDF becomes ~300 chunks of about **500 tokens** each.",
+      "Chunks **too big** → the answer gets buried in noise.",
+      "Chunks **too small** → meaning is lost. Add **10–20% overlap** to keep context."
+    ]
+  }
+]
