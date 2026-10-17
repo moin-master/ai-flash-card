@@ -94,3 +94,12 @@ body.hub { height: auto; min-height: 100%; overflow-y: auto; overflow-x: hidden;
 .note { text-align: center; color: var(--muted); font-size: 12px; margin-top: 30px; }
 
 @media (prefers-reduced-motion: reduce) { .blob { animation: none; } }
+
+/* clear button */
+.clear {
+  display: block; margin: 34px auto 0; padding: 9px 18px; border-radius: 99px; cursor: pointer;
+  font-size: 13px; font-weight: 800; color: var(--pink); background: transparent;
+  border: 1.5px solid rgba(255,92,138,.4);
+}
+.clear:active { transform: scale(.96); }
+.clear[disabled] { opacity: .35; cursor: default; }

@@ -64,3 +64,12 @@
     $("ctaText").textContent = `${resumeDeck ? "Continue" : "Start"} ${target.title} cards`;
   }
 })();
+
+// clear Got it / Review marks for every deck (stars are kept)
+document.getElementById("clear").addEventListener("click", () => {
+  if (!confirm("Clear all Got it and Review marks? Your ⭐ stars stay.")) return;
+  try {
+    (window.DECKS || []).forEach((d) => localStorage.removeItem(`flashcards:${d.id}`));
+  } catch {}
+  location.reload();
+});

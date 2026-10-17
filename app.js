@@ -115,16 +115,17 @@
   }
 
   function attachSwipe(card, id) {
-    let x0 = 0, y0 = 0, dx = 0, active = false, horizontal = null;
+    let x0 = 0, y0 = 0, dx = 0, maxMove = 0, active = false, horizontal = null;
 
     card.addEventListener("pointerdown", (e) => {
-      active = true; horizontal = null; dx = 0;
+      active = true; horizontal = null; dx = 0; maxMove = 0;
       x0 = e.clientX; y0 = e.clientY;
     });
 
     card.addEventListener("pointermove", (e) => {
       if (!active) return;
       const mx = e.clientX - x0, my = e.clientY - y0;
+      maxMove = Math.max(maxMove, Math.abs(mx), Math.abs(my));
       if (horizontal === null && (Math.abs(mx) > 8 || Math.abs(my) > 8)) {
         horizontal = Math.abs(mx) > Math.abs(my) * 1.5;
         if (horizontal) { card.setPointerCapture(e.pointerId); card.classList.add("dragging"); }
@@ -147,18 +148,24 @@
         card.classList.remove("left", "right");
       }
     };
-    // double-tap (or double-click) toggles the star
-    let lastTap = 0;
+    // double-tap (touch) or double-click (mouse) toggles the star
+    let lastTap = 0, lastToggle = 0;
+    const star = () => {
+      const now = Date.now();
+      if (now - lastToggle < 150) return; // both paths can fire for one gesture
+      lastToggle = now;
+      toggleStar(card, id);
+    };
     card.addEventListener("pointerup", () => {
-      const wasTap = active && horizontal === null;
+      const wasTap = active && !horizontal && maxMove < 15; // finger jitter is not a swipe
       end();
       if (!wasTap) return;
       const now = Date.now();
-      if (now - lastTap < 320) { lastTap = 0; toggleStar(card, id); }
+      if (now - lastTap < 400) { lastTap = 0; star(); }
       else lastTap = now;
     });
     card.addEventListener("pointercancel", end);
-    card.addEventListener("dblclick", (e) => e.preventDefault());
+    card.addEventListener("dblclick", (e) => { e.preventDefault(); star(); });
   }
 
   function toggleStar(card, id) {
