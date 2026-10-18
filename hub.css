@@ -31,12 +31,12 @@ body.hub .foot { position: static; margin: 22px 0 6px; pointer-events: auto; }
   -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
 }
 .nav-back {
-  display: inline-flex; align-items: center; gap: 4px; min-height: 40px; padding: 0 16px 0 10px; justify-self: start;
-  border-radius: 99px; text-decoration: none; color: var(--text); font-size: 15px; font-weight: 800;
+  display: inline-grid; place-items: center; width: 42px; height: 42px; justify-self: start;
+  border-radius: 50%; text-decoration: none; color: var(--text);
   background: rgba(21,21,42,.85); border: 1.5px solid var(--card-edge);
 }
-.nav-back svg { width: 20px; height: 20px; color: var(--lime); }
-.nav-back:active { transform: scale(.96); }
+.nav-back svg { width: 22px; height: 22px; color: var(--lime); }
+.nav-back:active { transform: scale(.94); }
 .nav-title { font-size: 16px; font-weight: 800; letter-spacing: .02em; }
 
 /* section label */

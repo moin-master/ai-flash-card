@@ -6,6 +6,11 @@
   const read = (key) => { try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; } };
   const status = read(`flashcards:${ID}`);
   const stars = read(`flashcards:${ID}:stars`);
+  const views = read(`flashcards:${ID}:views`);
+  let pos = "";
+  try { pos = localStorage.getItem(`flashcards:${ID}:pos`) || ""; } catch {}
+  const totalViews = cards.reduce((n, c) => n + (views[c.id] || 0), 0);
+  const seenCards = cards.filter((c) => views[c.id]).length;
 
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const plural = (n) => `${n} card${n === 1 ? "" : "s"}`;
@@ -23,12 +28,19 @@
   $("sKnown").textContent = known.length;
   $("sReview").textContent = review.length;
   $("sStar").textContent = starred.length;
-  $("sumLine").textContent = `${fresh.length} new · ${review.length} to review · ${known.length} learned`;
+  $("sumLine").textContent = `${fresh.length} new · ${review.length} to review · 👁 ${totalViews} views`;
 
   // main button: jump to the next card you have not seen yet
-  const started = known.length + review.length > 0;
-  $("ctaText").textContent = started ? "Continue" : "Start flash cards";
-  if (started && fresh[0]) $("cta").href = `rag-flash-card.html#${encodeURIComponent(fresh[0].id)}`;
+  // resume exactly where you stopped (last viewed card), else the next unseen one
+  const posAt = cards.findIndex((c) => c.id === pos);
+  const started = known.length + review.length > 0 || posAt > 0;
+  if (posAt > 0) {
+    $("ctaText").textContent = `Resume · card ${posAt + 1} of ${cards.length}`;
+    $("cta").href = `rag-flash-card.html#${encodeURIComponent(pos)}`;
+  } else {
+    $("ctaText").textContent = started ? "Continue" : "Start flash cards";
+    if (started && fresh[0]) $("cta").href = `rag-flash-card.html#${encodeURIComponent(fresh[0].id)}`;
+  }
 
   // study rows
   $("reviewNum").textContent = review.length;

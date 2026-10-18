@@ -12,6 +12,9 @@
   let stars = {};
   let reviewOnly = false;
   let starOnly = false;
+  let views = {};
+  let viewTimer = null;
+  const seenNow = new Set(); // a card counts once per visit to the page
 
   const storeKey = (id) => `flashcards:${id}`;
   const load = (id) => { try { return JSON.parse(localStorage.getItem(storeKey(id))) || {}; } catch { return {}; } };
@@ -19,6 +22,13 @@
   const starKey = (id) => `flashcards:${id}:stars`;
   const loadStars = (id) => { try { return JSON.parse(localStorage.getItem(starKey(id))) || {}; } catch { return {}; } };
   const saveStars = () => { try { localStorage.setItem(starKey(deck.id), JSON.stringify(stars)); } catch {} };
+
+  const viewKey = (id) => `flashcards:${id}:views`;
+  const posKey = (id) => `flashcards:${id}:pos`;
+  const loadViews = (id) => { try { return JSON.parse(localStorage.getItem(viewKey(id))) || {}; } catch { return {}; } };
+  const saveViews = () => { try { localStorage.setItem(viewKey(deck.id), JSON.stringify(views)); localStorage.setItem("flashcards:last", deck.id); } catch {} };
+  const savePos = (cid) => { try { localStorage.setItem(posKey(deck.id), cid); } catch {} };
+  const loadPos = (id) => { try { return localStorage.getItem(posKey(id)) || ""; } catch { return ""; } };
 
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   // escape first, then turn **word** into bold
@@ -34,15 +44,18 @@
     }
     status = load(deck.id);
     stars = loadStars(deck.id);
+    views = loadViews(deck.id);
     deckName.textContent = `${deck.emoji} ${deck.title}`;
     // dashboard links: ?mode=review | ?mode=starred, and #card-id to jump to one card
     const mode = new URLSearchParams(location.search).get("mode");
     reviewOnly = mode === "review";
     starOnly = mode === "starred";
     render();
-    const wanted = decodeURIComponent(location.hash.slice(1));
+    // a #card-id wins; otherwise resume where you stopped last time
+    const wanted = decodeURIComponent(location.hash.slice(1)) || (reviewOnly || starOnly ? "" : loadPos(deck.id));
     const at = cards.findIndex((c) => c.id === wanted);
     if (at > 0) { feed.scrollTop = at * feed.clientHeight; updateProgress(); }
+    scheduleView();
   }
 
   function render() {
@@ -64,7 +77,7 @@
       <article class="card" data-id="${c.id}">
         <span class="stamp know">GOT IT ✔</span>
         <span class="stamp again">REVIEW ✖</span>
-        <div class="tag-row"><span class="tag">${esc(c.tag || "Concept")}</span><span class="star-badge" aria-label="Starred">⭐</span></div>
+        <div class="tag-row"><span class="tag">${esc(c.tag || "Concept")}</span><span class="tag-right"><span class="views${views[c.id] ? "" : " hide"}">👁 <i>${views[c.id] || 0}</i></span><span class="star-badge" aria-label="Starred">⭐</span></span></div>
         <h2 class="term">${esc(c.term)}</h2>
         <div class="label why">🎤 INTERVIEW ANSWER</div>
         <p class="explain">${rich(c.explain)}</p>
@@ -102,7 +115,7 @@
       <button class="btn ghost" id="btnAll">${reviewOnly || starOnly ? "Back to all cards" : "Start over"}</button>`;
     end.querySelector("#btnReview").onclick = () => { reviewOnly = true; starOnly = false; render(); };
     end.querySelector("#btnAll").onclick = () => {
-      if (!reviewOnly && !starOnly) { status = {}; save(); }
+      if (!reviewOnly && !starOnly) { status = {}; save(); savePos(""); }
       reviewOnly = false; starOnly = false; render();
     };
   }
@@ -203,10 +216,27 @@
     if (idx >= cards.length) fillEnd();
   }
 
+  function scheduleView() {
+    clearTimeout(viewTimer);
+    viewTimer = setTimeout(recordView, 700); // only count a card you actually stopped on
+  }
+
+  function recordView() {
+    const c = cards[currentIndex()];
+    if (!c) return;
+    if (!reviewOnly && !starOnly) savePos(c.id);
+    if (seenNow.has(c.id)) return;
+    seenNow.add(c.id);
+    views[c.id] = (views[c.id] || 0) + 1;
+    saveViews();
+    const chip = feed.querySelector(`.card[data-id="${c.id}"] .views`);
+    if (chip) { chip.classList.remove("hide"); chip.querySelector("i").textContent = views[c.id]; }
+  }
+
   function currentIndex() {
     return Math.min(Math.round(feed.scrollTop / feed.clientHeight), cards.length);
   }
 
-  feed.addEventListener("scroll", () => updateProgress(), { passive: true });
+  feed.addEventListener("scroll", () => { updateProgress(); scheduleView(); }, { passive: true });
   init();
 })();

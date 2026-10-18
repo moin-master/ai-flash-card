@@ -28,7 +28,7 @@
   /* ---------- data ---------- */
   const decks = window.DECKS || [];
   const tracks = $("decks");
-  let known = 0, review = 0, starred = 0, total = 0;
+  let known = 0, review = 0, starred = 0, total = 0, viewsTotal = 0;
   const live = [];
   const reviewItems = [], starItems = [];
 
@@ -46,6 +46,7 @@
         const r = cards.filter((c) => status[c.id] === "review").length;
         const s = cards.filter((c) => stars[c.id]).length;
         known += k; review += r; starred += s; total += cards.length;
+        viewsTotal += Object.values(read(`flashcards:${d.id}:views`)).reduce((n, v) => n + v, 0);
         pct = Math.round((k / cards.length) * 100);
         meta = `${cards.length} cards · ✔ ${k} · ✖ ${r} · ⭐ ${s}`;
         progress = k + r;
@@ -81,7 +82,7 @@
   $("sKnown").textContent = known;
   $("sReview").textContent = review;
   $("sStar").textContent = starred;
-  $("oLine").textContent = `${known} of ${total} cards learned · ${live.length} of ${decks.length} tracks live`;
+  $("oLine").textContent = `${known} of ${total} cards learned · 👁 ${viewsTotal} views`;
 
   let lastId = null;
   try { lastId = localStorage.getItem("flashcards:last"); } catch {}
