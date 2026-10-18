@@ -8,6 +8,7 @@
   --lime: #b6ff3b;
   --pink: #ff5c8a;
   --yellow: #ffd23f;
+  --on-accent: #0b0b14;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -167,3 +168,5 @@ strong { color: var(--yellow); font-weight: 800; }
   35% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
   100% { opacity: 0; transform: translate(-50%, -60%) scale(1); }
 }
+
+.back { font-size: 32px; line-height: 1; font-weight: 400; padding: 0 12px 4px 0; }

@@ -8,6 +8,7 @@
   const stars = read(`flashcards:${ID}:stars`);
 
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const plural = (n) => `${n} card${n === 1 ? "" : "s"}`;
 
   const known = cards.filter((c) => status[c.id] === "known");
   const review = cards.filter((c) => status[c.id] === "review");
@@ -15,50 +16,58 @@
   const fresh = cards.filter((c) => !status[c.id]);
   const pct = cards.length ? Math.round((known.length / cards.length) * 100) : 0;
 
-  // numbers
-  $("bigRing").style.setProperty("--p", `${pct}%`);
+  // summary
+  $("ring").style.setProperty("--p", `${pct}%`);
   $("bigPct").textContent = `${pct}%`;
-  $("bigSub").textContent = `${known.length} / ${cards.length} mastered`;
+  $("bigSub").textContent = `${known.length} / ${cards.length}`;
   $("sKnown").textContent = known.length;
   $("sReview").textContent = review.length;
   $("sStar").textContent = starred.length;
-  $("sNew").textContent = fresh.length;
+  $("sumLine").textContent = `${fresh.length} new · ${review.length} to review · ${known.length} learned`;
 
-  // main button: continue where it makes sense
+  // main button: jump to the next card you have not seen yet
   const started = known.length + review.length > 0;
-  $("ctaText").textContent = started ? "Continue flash cards" : "Start flash cards";
-  const next = fresh[0];
-  if (started && next) $("cta").href = `rag-flash-card.html#${encodeURIComponent(next.id)}`;
+  $("ctaText").textContent = started ? "Continue" : "Start flash cards";
+  if (started && fresh[0]) $("cta").href = `rag-flash-card.html#${encodeURIComponent(fresh[0].id)}`;
 
-  const off = (el) => { el.classList.add("off"); el.removeAttribute("href"); };
-  if (!review.length) off($("studyReview"));
-  if (!starred.length) off($("studyStar"));
+  // study rows
+  $("reviewNum").textContent = review.length;
+  $("starNum").textContent = starred.length;
+  $("newNum").textContent = fresh.length;
+  if (review.length) $("reviewHint").textContent = "Tap to study";
+  if (starred.length) $("starHint").textContent = "Tap to study";
+  if (!review.length) $("studyReview").classList.add("off");
+  if (!starred.length) $("studyStar").classList.add("off");
+  if (fresh[0]) $("studyNew").href = `rag-flash-card.html#${encodeURIComponent(fresh[0].id)}`;
+  else $("studyNew").classList.add("off");
 
-  // by topic (tags, in deck order)
+  // topics (tags, in deck order)
   const tags = [];
   cards.forEach((c) => { if (!tags.includes(c.tag)) tags.push(c.tag); });
   $("topics").innerHTML = tags.map((t) => {
     const all = cards.filter((c) => c.tag === t);
     const k = all.filter((c) => status[c.id] === "known").length;
     const r = all.filter((c) => status[c.id] === "review").length;
+    const first = all[0];
     return `
-      <div class="topic">
-        <div class="topic-top"><b>${esc(t || "Other")}</b><span>${k}/${all.length}${r ? ` · ✖ ${r}` : ""}</span></div>
-        <div class="tbar"><i style="width:${(k / all.length) * 100}%"></i></div>
-      </div>`;
+      <a class="row" href="rag-flash-card.html#${encodeURIComponent(first.id)}" style="--c:#32d74b">
+        <span class="tx"><b>${esc(t || "Other")}</b><small>${k} of ${all.length} learned${r ? ` · ${r} to review` : ""}</small>
+          <span class="row-bar"><i style="width:${(k / all.length) * 100}%"></i></span></span>
+        <span class="chev">›</span>
+      </a>`;
   }).join("");
 
   // lists link straight to a card
   const list = (el, items, empty) => {
     el.innerHTML = items.length
-      ? items.map((c) => `<a class="row" href="rag-flash-card.html#${encodeURIComponent(c.id)}"><span>${esc(c.term)}</span><em>${esc(c.tag || "")}</em></a>`).join("")
-      : `<p class="empty">${empty}</p>`;
+      ? items.map((c) => `<a class="row" href="rag-flash-card.html#${encodeURIComponent(c.id)}"><span class="tx"><b>${esc(c.term)}</b><small>${esc(c.tag || "")}</small></span><span class="chev">›</span></a>`).join("")
+      : `<div class="row"><span class="tx"><small>${empty}</small></span></div>`;
   };
   list($("reviewList"), review, "Nothing here. Swipe a card left to add it.");
   list($("starList"), starred, "Double-tap a card to star it.");
 
   $("clear").addEventListener("click", () => {
-    if (!confirm("Clear RAG Got it and Review marks? Your ⭐ stars stay.")) return;
+    if (!confirm("Clear RAG Got it and Review marks? Your stars stay.")) return;
     try { localStorage.removeItem(`flashcards:${ID}`); } catch {}
     location.reload();
   });

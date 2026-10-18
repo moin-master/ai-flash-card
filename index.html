@@ -10,52 +10,82 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
-  <link rel="stylesheet" href="style.css?v=4">
-  <link rel="stylesheet" href="hub.css?v=5">
+  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="hub.css?v=10">
 </head>
 <body class="hub">
   <div class="blob b1"></div>
   <div class="blob b2"></div>
   <div class="blob b3"></div>
 
-  <main class="wrap">
-    <h1 class="hero">Learn AI terms.<br><span class="grad">Ace the interview.</span></h1>
-    <p class="sub">Swipe. Remember. Repeat.</p>
+  <main class="app-main">
 
-    <section class="overall" aria-label="Your progress">
-      <div class="overall-top">
-        <div id="ring" class="o-ring" style="--p:0%"><div><b id="oPct">0%</b></div></div>
-        <div class="o-nums">
-          <div><b id="sKnown">0</b><span>GOT IT</span></div>
-          <div><b id="sReview">0</b><span>REVIEW</span></div>
-          <div><b id="sStar">0</b><span>STARRED</span></div>
+    <!-- HOME -->
+    <section id="view-home" class="view">
+      <header class="large">
+        <h1 class="hero">Learn AI terms.<br><span class="grad">Ace the interview.</span></h1>
+        <p class="sub">Swipe. Remember. Repeat.</p>
+      </header>
+
+      <div class="summary">
+        <div class="sum-top">
+          <div id="ring" class="ring" style="--p:0%"><div><b id="oPct">0%</b><span>mastered</span></div></div>
+          <div class="nums">
+            <div class="k"><b id="sKnown">0</b><span>Got it</span></div>
+            <div class="r"><b id="sReview">0</b><span>Review</span></div>
+            <div class="s"><b id="sStar">0</b><span>Starred</span></div>
+          </div>
         </div>
+        <p id="oLine" class="sum-line"></p>
+        <a id="cta" class="primary" href="#"><span id="ctaText">Start learning</span><span>›</span></a>
       </div>
-      <p id="oLine" class="o-line"></p>
-      <a id="cta" class="cta" href="#">
-        <span id="ctaText">Start learning</span>
-        <span class="cta-arrow">→</span>
-      </a>
+
+      <h2 class="gh">Tracks</h2>
+      <div id="decks" class="tracks"></div>
+
+      <h2 class="gh">How it works</h2>
+      <div class="how">
+        <div><i>⬆️</i><b>Swipe up</b><span>next card</span></div>
+        <div><i>✅</i><b>Swipe right</b><span>got it</span></div>
+        <div><i>🔁</i><b>Swipe left</b><span>review later</span></div>
+        <div><i>⭐</i><b>Double tap</b><span>star / unstar</span></div>
+      </div>
+
+      <button id="clear" class="clear" type="button">🗑 Clear Got it &amp; Review</button>
+      <p class="note">Progress is saved on this device only.</p>
     </section>
 
-    <h2 class="section">Tracks</h2>
-    <div id="decks" class="tracks"></div>
+    <!-- REVIEW -->
+    <section id="view-review" class="view" hidden>
+      <header class="large"><h1 class="hero">🔁 <span class="grad">Review</span></h1><p class="sub">Cards you swiped left</p></header>
+      <div id="reviewList"></div>
+    </section>
 
-    <h2 class="section">How it works</h2>
-    <div class="how">
-      <div><i>⬆️</i><b>Swipe up</b><span>next card</span></div>
-      <div><i>✅</i><b>Swipe right</b><span>got it</span></div>
-      <div><i>🔁</i><b>Swipe left</b><span>review later</span></div>
-      <div><i>⭐</i><b>Double tap</b><span>star / unstar</span></div>
-    </div>
+    <!-- STARRED -->
+    <section id="view-starred" class="view" hidden>
+      <header class="large"><h1 class="hero">⭐ <span class="grad">Starred</span></h1><p class="sub">Cards you double-tapped</p></header>
+      <div id="starList"></div>
+    </section>
 
-    <button id="clear" class="clear" type="button">🗑 Clear all Got it &amp; Review</button>
-    <p class="note">Progress is saved on this device only.</p>
+    <footer class="foot">© Moin Master</footer>
   </main>
 
-  <footer class="foot">© Moin Master</footer>
+  <nav class="tabbar" aria-label="Main">
+    <div class="tabbar-in">
+      <button class="tab on" data-tab="home" type="button">
+        <svg class="fillable" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Home
+      </button>
+      <button class="tab" data-tab="review" type="button">
+        <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.5-5.8"/><path d="M20 4v5h-5"/></svg>Review
+        <span id="badgeReview" class="badge" hidden>0</span>
+      </button>
+      <button class="tab" data-tab="starred" type="button">
+        <svg class="fillable" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Starred
+      </button>
+    </div>
+  </nav>
 
   <script src="data/decks.js"></script>
-  <script src="hub.js?v=5"></script>
+  <script src="hub.js?v=9"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@ window.DECKS = [
     "color": "#a78bfa",
     "topics": ["Chunking", "Embeddings", "Vector DBs", "Reranking", "Evaluation"],
     "page": "rag/index.html",
+    "cards": "rag/rag-flash-card.html",
     "script": "data/rag.js"
   },
   {

@@ -6,60 +6,82 @@
   <meta name="theme-color" content="#0b0b14">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
-  <title>RAG Dashboard</title>
+  <title>RAG</title>
   <link rel="manifest" href="../manifest.json">
   <link rel="icon" href="../icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="../icon.svg">
-  <link rel="stylesheet" href="../style.css?v=4">
-  <link rel="stylesheet" href="../hub.css?v=5">
+  <link rel="stylesheet" href="../style.css?v=9">
+  <link rel="stylesheet" href="../hub.css?v=10">
 </head>
-<body class="hub" data-deck="rag">
+<body class="hub has-navbar" data-deck="rag">
   <div class="blob b1"></div>
   <div class="blob b2"></div>
   <div class="blob b3"></div>
 
-  <main class="wrap">
-    <a class="crumb" href="../">← All decks</a>
-    <h1 class="dash-title">🔎 RAG <span class="grad">Dashboard</span></h1>
-
-    <section class="big-ring-box">
-      <div id="bigRing" class="big-ring" style="--p:0%"><div><b id="bigPct">0%</b><span id="bigSub">0 / 0 mastered</span></div></div>
-    </section>
-
-    <a id="cta" class="cta" href="rag-flash-card.html">
-      <span id="ctaText">Start flash cards</span>
-      <span class="cta-arrow">→</span>
+  <header class="navbar">
+    <a class="nav-back" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Home
     </a>
+    <span class="nav-title">RAG</span>
+    <span></span>
+  </header>
 
-    <section class="stats four" aria-label="RAG progress">
-      <div class="stat-pill k"><b id="sKnown">0</b><span>GOT IT</span></div>
-      <div class="stat-pill r"><b id="sReview">0</b><span>REVIEW</span></div>
-      <div class="stat-pill s"><b id="sStar">0</b><span>STARRED</span></div>
-      <div class="stat-pill d"><b id="sNew">0</b><span>NEW</span></div>
-    </section>
+  <main class="app-main">
+    <header class="large">
+      <h1 class="hero">🔎 RAG <span class="grad">Dashboard</span></h1>
+      <p class="sub">Retrieval-Augmented Generation</p>
+    </header>
 
-    <div class="study">
-      <a id="studyReview" class="study-btn r" href="rag-flash-card.html?mode=review">✖ Study review</a>
-      <a id="studyStar" class="study-btn s" href="rag-flash-card.html?mode=starred">⭐ Study starred</a>
+    <div class="summary">
+      <div class="sum-top">
+        <div id="ring" class="ring" style="--p:0%"><div><b id="bigPct">0%</b><span id="bigSub">0 / 0</span></div></div>
+        <div class="nums">
+          <div class="k"><b id="sKnown">0</b><span>Got it</span></div>
+          <div class="r"><b id="sReview">0</b><span>Review</span></div>
+          <div class="s"><b id="sStar">0</b><span>Starred</span></div>
+        </div>
+      </div>
+      <p id="sumLine" class="sum-line"></p>
+      <a id="cta" class="primary" href="rag-flash-card.html"><span id="ctaText">Start flash cards</span><span>›</span></a>
     </div>
 
-    <h2 class="section">By topic</h2>
-    <div id="topics" class="topics"></div>
+    <h2 class="gh">Study</h2>
+    <div class="study-grid">
+      <a id="studyReview" class="stile" href="rag-flash-card.html?mode=review" style="--c:#ff5c8a">
+        <span class="s-emoji">🔁</span>
+        <b id="reviewNum">0</b>
+        <span class="s-label">Review</span>
+        <em id="reviewHint">Swipe a card left</em>
+      </a>
+      <a id="studyStar" class="stile" href="rag-flash-card.html?mode=starred" style="--c:#ffd23f">
+        <span class="s-emoji">⭐</span>
+        <b id="starNum">0</b>
+        <span class="s-label">Starred</span>
+        <em id="starHint">Double-tap a card</em>
+      </a>
+      <a id="studyNew" class="stile wide" href="rag-flash-card.html" style="--c:#b6ff3b">
+        <span class="s-emoji">✨</span>
+        <span class="s-mid"><b id="newNum">0</b><span class="s-label">New cards to learn</span></span>
+        <span class="s-go">→</span>
+      </a>
+    </div>
 
-    <h2 class="section">Needs review</h2>
-    <div id="reviewList" class="cardlist"></div>
+    <h2 class="gh">Topics</h2>
+    <div id="topics" class="group"></div>
 
-    <h2 class="section">Starred</h2>
-    <div id="starList" class="cardlist"></div>
+    <h2 class="gh">Needs review</h2>
+    <div id="reviewList" class="group"></div>
+
+    <h2 class="gh">Starred</h2>
+    <div id="starList" class="group"></div>
 
     <button id="clear" class="clear" type="button">🗑 Clear RAG Got it &amp; Review</button>
     <p class="note">Progress is saved on this device only.</p>
+    <footer class="foot">© Moin Master</footer>
   </main>
-
-  <footer class="foot">© Moin Master</footer>
 
   <script src="../data/decks.js"></script>
   <script src="../data/rag.js"></script>
-  <script src="dashboard.js?v=4"></script>
+  <script src="dashboard.js?v=9"></script>
 </body>
 </html>
