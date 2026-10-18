@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0b14">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>LLM Flash Cards</title>
+  <link rel="manifest" href="../manifest.json">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../icon.svg">
+  <link rel="stylesheet" href="../style.css?v=19">
+</head>
+<body data-deck="llm" data-theme="amber">
+  <header class="top">
+    <div class="top-row">
+      <span class="deck-wrap"><a class="back" href="index.html" aria-label="Back to LLM dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a><span id="deckName" class="deck">…</span></span>
+      <span id="counter" class="counter"></span>
+    </div>
+    <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+  </header>
+
+  <main id="feed" class="feed" aria-live="polite"></main>
+
+  <footer class="foot">© Moin Master</footer>
+
+  <script src="../data/decks.js?v=19"></script>
+  <script src="../data/llm.js?v=19"></script>
+  <script src="../app.js?v=19"></script>
+</body>
+</html>

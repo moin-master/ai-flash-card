@@ -61,6 +61,141 @@
 - Open-Weight vs Closed
 - Fine-Tuning vs RAG vs Prompting
 
+
+## ✅ Covered as Flash Cards (100, grouped logically)
+
+> Deck: `data/llm.js` · pages: `llm/index.html` → `llm/llm-flash-card.html`
+
+### Foundations
+
+- ✅ Large Language Model (LLM)
+- ✅ Tokens & Tokenization
+- ✅ Byte-Pair Encoding (BPE)
+- ✅ Context Window
+- ✅ Next-Token Prediction
+- ✅ Parameters & Model Size
+- ✅ Base vs Instruct Models
+- ✅ Scaling Laws
+
+### Architecture
+
+- ✅ Transformer
+- ✅ Embeddings
+- ✅ Self-Attention
+- ✅ Query, Key & Value (QKV)
+- ✅ Multi-Head Attention
+- ✅ Positional Encoding & RoPE
+- ✅ Causal Masking
+- ✅ Encoder vs Decoder (BERT vs GPT vs T5)
+- ✅ FFN, Residual Connections & LayerNorm
+- ✅ Logits & Softmax
+- ✅ KV Cache
+- ✅ FlashAttention
+- ✅ MQA & GQA
+- ✅ Mixture of Experts (MoE)
+- ✅ State Space Models (Mamba)
+
+### Training
+
+- ✅ Pre-training
+- ✅ Training Data Curation
+- ✅ Loss & Cross-Entropy
+- ✅ Backpropagation, Gradient Descent & AdamW
+- ✅ Learning Rate Schedule & Warmup
+- ✅ Batch Size & Gradient Accumulation
+- ✅ Mixed Precision (FP16/BF16/FP8)
+- ✅ Distributed Training (DP, TP, PP, ZeRO)
+- ✅ Overfitting & Regularization
+
+### Tuning
+
+- ✅ Supervised Fine-Tuning (SFT) & Instruction Tuning
+- ✅ Fine-Tuning vs RAG vs Prompting
+- ✅ PEFT & LoRA
+- ✅ QLoRA
+- ✅ Catastrophic Forgetting
+- ✅ Alignment (Helpful, Honest, Harmless)
+- ✅ RLHF
+- ✅ Reward Model
+- ✅ PPO (Proximal Policy Optimization)
+- ✅ DPO (Direct Preference Optimization)
+- ✅ RLAIF & Constitutional AI
+- ✅ RLVR & GRPO (Reasoning RL)
+- ✅ Knowledge Distillation
+- ✅ Synthetic Data
+
+### Prompting
+
+- ✅ Prompt Engineering
+- ✅ System, User & Assistant Roles
+- ✅ Zero-Shot vs Few-Shot Prompting
+- ✅ In-Context Learning
+- ✅ Chain-of-Thought Prompting
+- ✅ Prompt Templates & Delimiters
+- ✅ Structured Output & JSON Mode
+- ✅ Function Calling
+- ✅ Prompt Injection & Jailbreaks
+- ✅ Prompt Caching
+
+### Inference
+
+- ✅ Greedy vs Beam Search
+- ✅ Temperature
+- ✅ Top-k & Top-p (Nucleus) Sampling
+- ✅ Repetition, Frequency & Presence Penalties
+- ✅ Constrained Decoding
+- ✅ Reasoning Models & Test-Time Compute
+- ✅ Speculative Decoding
+- ✅ Prefill vs Decode
+- ✅ TTFT, TPOT & Throughput
+- ✅ Continuous Batching
+- ✅ PagedAttention & vLLM
+- ✅ Quantization
+- ✅ GPTQ, AWQ & GGUF
+- ✅ Model Size & GPU Memory (VRAM math)
+
+### Evaluation
+
+- ✅ Perplexity
+- ✅ LLM Benchmarks (MMLU, GSM8K, HumanEval)
+- ✅ BLEU, ROUGE & BERTScore
+- ✅ pass@k
+- ✅ LLM-as-a-Judge
+- ✅ Arena & Elo Ratings
+- ✅ Benchmark Contamination
+- ✅ Evals-Driven Development
+
+### Safety
+
+- ✅ Hallucination
+- ✅ Sycophancy
+- ✅ Bias & Fairness
+- ✅ Red Teaming
+- ✅ Content Moderation & Guardrails
+- ✅ Privacy & Memorization
+- ✅ Data Poisoning & Backdoors
+- ✅ Watermarking & AI-Text Detection
+- ✅ Interpretability
+- ✅ Responsible AI & Regulation
+
+### Models
+
+- ✅ Open-Weight vs Closed Models
+- ✅ Open Model Families (LLaMA, Mistral, Qwen, DeepSeek)
+- ✅ Frontier Model Families (GPT, Claude, Gemini)
+- ✅ Multimodal LLMs
+- ✅ Small Language Models (SLMs)
+- ✅ Hugging Face Ecosystem
+- ✅ Local Inference (Ollama, llama.cpp)
+- ✅ API Basics & Token Pricing
+
+### LLMOps
+
+- ✅ Model Selection: Cost, Quality & Latency
+- ✅ LLM Gateway & Routing
+- ✅ Rate Limits, Retries & Timeouts
+- ✅ LLMOps & Observability
+
 ## Fundamentals
 - Language Model
 - Large Language Model (LLM)

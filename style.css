@@ -18,6 +18,17 @@
   --ring: #b6ff3b;
 }
 
+/* amber theme (LLM) */
+body[data-theme="amber"] {
+  --purple: #ffb020;
+  --t1: #ffb020;
+  --t2: #ff7a45;
+  --t3: #ffd966;
+  --cta: #ffb020;
+  --cta-dark: #b77700;
+  --ring: #ff7a45;
+}
+
 /* blue theme (Agentic AI) */
 body[data-theme="blue"] {
   --purple: #4da3ff;

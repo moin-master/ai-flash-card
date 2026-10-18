@@ -26,8 +26,10 @@ window.DECKS = [
     "title": "LLM",
     "emoji": "🧠",
     "blurb": "Transformers, tuning, inference",
-    "color": "#ffd23f",
+    "color": "#ffb020",
     "topics": ["Attention", "Fine-tuning", "RLHF", "Quantization", "Decoding"],
-    "soon": true
+    "page": "llm/index.html",
+    "cards": "llm/llm-flash-card.html",
+    "script": "data/llm.js"
   }
 ];
