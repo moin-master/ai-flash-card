@@ -1,5 +1,74 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#0b0b14"/>
-  <rect x="116" y="96" width="280" height="320" rx="40" fill="#a78bfa"/>
-  <text x="256" y="300" font-size="150" text-anchor="middle" font-family="sans-serif" font-weight="800" fill="#0b0b14">AI</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AI Flash Cards">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b1236"/>
+      <stop offset="1" stop-color="#0b0b14"/>
+    </linearGradient>
+    <radialGradient id="glowPurple" cx=".12" cy=".08" r=".75">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowPink" cx=".98" cy=".6" r=".6">
+      <stop offset="0" stop-color="#ff5c8a" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#ff5c8a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowLime" cx=".25" cy="1" r=".65">
+      <stop offset="0" stop-color="#b6ff3b" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#b6ff3b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cardAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd23f"/>
+      <stop offset="1" stop-color="#ff7a45"/>
+    </linearGradient>
+    <linearGradient id="cardBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#4d7cff"/>
+    </linearGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="26"/></filter>
+    <path id="spark" d="M0 -40 Q7 -7 40 0 Q7 7 0 40 Q-7 7 -40 0 Q-7 -7 0 -40Z"/>
+    <clipPath id="clip"><rect width="512" height="512" rx="112"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+    <rect width="512" height="512" fill="url(#bg)"/>
+    <rect width="512" height="512" fill="url(#glowPurple)"/>
+    <rect width="512" height="512" fill="url(#glowPink)"/>
+    <rect width="512" height="512" fill="url(#glowLime)"/>
+
+    <!-- glow under the front card -->
+    <ellipse cx="256" cy="300" rx="120" ry="100" fill="#b6ff3b" opacity=".28" filter="url(#blur)"/>
+
+    <!-- back cards: one per deck colour -->
+    <g transform="translate(-18 8) rotate(-21 256 262)">
+      <rect x="146" y="121" width="220" height="290" rx="46" fill="url(#cardAmber)"/>
+      <rect x="146" y="121" width="220" height="290" rx="46" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="3"/>
+    </g>
+    <g transform="translate(18 8) rotate(19 256 262)">
+      <rect x="146" y="121" width="220" height="290" rx="46" fill="url(#cardBlue)"/>
+      <rect x="146" y="121" width="220" height="290" rx="46" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="3"/>
+    </g>
+
+    <!-- front card with chunky 3D edge -->
+    <g transform="rotate(-2 256 262)">
+      <rect x="146" y="133" width="220" height="290" rx="46" fill="#6fa31a"/>
+      <rect x="146" y="117" width="220" height="290" rx="46" fill="#b6ff3b"/>
+      <rect x="146" y="117" width="220" height="290" rx="46" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+
+      <!-- AI letters drawn as strokes so no font is needed -->
+      <g fill="none" stroke="#0b0b14" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M196 318 L231 214 L266 318"/>
+        <path d="M212 284 H250"/>
+        <path d="M312 214 V318"/>
+      </g>
+      <!-- swipe hint bars -->
+      <rect x="196" y="360" width="120" height="14" rx="7" fill="#0b0b14" opacity=".22"/>
+      <rect x="226" y="382" width="60" height="10" rx="5" fill="#0b0b14" opacity=".16"/>
+    </g>
+
+    <!-- sparkles -->
+    <use href="#spark" transform="translate(412 108) scale(.95)" fill="#ffd23f"/>
+    <use href="#spark" transform="translate(98 400) scale(.62)" fill="#ff5c8a"/>
+    <use href="#spark" transform="translate(432 428) scale(.4)" fill="#ffffff" opacity=".85"/>
+    <use href="#spark" transform="translate(84 130) scale(.34)" fill="#ffffff" opacity=".8"/>
+  </g>
 </svg>
