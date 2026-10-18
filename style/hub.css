@@ -19,7 +19,7 @@ body.hub .foot { position: static; margin: 22px 0 6px; pointer-events: auto; }
 
 /* big gradient headline */
 .large { padding: 4px 2px 22px; }
-.hero { font-size: clamp(38px, 11vw, 52px); line-height: 1.02; font-weight: 900; letter-spacing: -.02em; }
+.hero { font-size: clamp(30px, 8.8vw, 50px); line-height: 1.02; font-weight: 900; letter-spacing: -.02em; }
 .grad { background: linear-gradient(90deg, var(--t1), var(--t2) 55%, var(--t3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .sub { color: var(--muted); font-size: 18px; font-weight: 600; margin-top: 10px; }
 
@@ -212,3 +212,12 @@ a.row:active { background: rgba(167,139,250,.12); }
 .s-go { font-size: 26px; font-weight: 900; color: var(--c); }
 .stile.off { opacity: .55; pointer-events: none; }
 .stile.off b { color: var(--muted); }
+
+/* big logo in front of the two-line headline */
+.hero.with-logo { display: flex; align-items: center; gap: .3em; font-size: clamp(26px, 8.2vw, 46px); }
+.hero-logo {
+  flex: none; display: block; width: 2.05em; height: 2.05em; box-sizing: border-box;
+  border: .04em solid #fff; border-radius: 23%;
+  filter: drop-shadow(0 8px 18px rgba(182,255,59,.3));
+}
+.hero-text { min-width: 0; }
