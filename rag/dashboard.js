@@ -78,6 +78,12 @@
   list($("reviewList"), review, "Nothing here. Swipe a card left to add it.");
   list($("starList"), starred, "Double-tap a card to star it.");
 
+  // top bar is see-through at the top, frosted once you scroll
+  const bar = document.querySelector(".navbar");
+  const onScroll = () => bar.classList.toggle("scrolled", window.scrollY > 24);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
   $("clear").addEventListener("click", () => {
     if (!confirm("Clear RAG Got it and Review marks? Your stars stay.")) return;
     try { localStorage.removeItem(`flashcards:${ID}`); } catch {}
