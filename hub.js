@@ -34,7 +34,7 @@
 
   for (const d of decks) {
     const color = d.color || "#a78bfa";
-    let pct = 0, meta = "Coming soon", progress = 0;
+    let pct = 0, meta = "Coming soon", progress = 0, pos = "", at = -1;
 
     if (!d.soon) {
       try {
@@ -50,12 +50,14 @@
         pct = Math.round((k / cards.length) * 100);
         meta = `${cards.length} cards · ✔ ${k} · ✖ ${r} · ⭐ ${s}`;
         progress = k + r;
+        try { pos = localStorage.getItem(`flashcards:${d.id}:pos`) || ""; } catch {}
+        at = cards.findIndex((c) => c.id === pos);
         cards.forEach((c) => {
           if (status[c.id] === "review") reviewItems.push({ d, c });
           if (stars[c.id]) starItems.push({ d, c });
         });
       } catch { meta = "Cards unavailable"; }
-      live.push({ d, progress });
+      live.push({ d, progress, pos, at });
     }
 
     const el = document.createElement(d.soon ? "div" : "a");
@@ -84,12 +86,15 @@
   $("sStar").textContent = starred;
   $("oLine").textContent = `${known} of ${total} cards learned · 👁 ${viewsTotal} views`;
 
+  // Quick start: always the deck you opened most recently, straight into its cards
   let lastId = null;
   try { lastId = localStorage.getItem("flashcards:last"); } catch {}
-  const target = live.find((x) => x.d.id === lastId) || live.find((x) => x.progress > 0) || live[0];
+  const target = live.find((x) => x.d.id === lastId) || live.find((x) => x.progress > 0 || x.at > 0) || live[0];
   if (target) {
-    $("cta").href = target.d.page;
-    $("ctaText").textContent = `${target.progress > 0 ? "Continue" : "Start"} ${target.d.title}`;
+    const resume = target.at > 0;
+    $("cta").href = resume ? `${target.d.cards}#${encodeURIComponent(target.pos)}` : target.d.cards;
+    const verb = resume || target.progress > 0 ? "Continue" : "Start";
+    $("ctaText").textContent = `${verb} ${target.d.title}${resume ? ` · card ${target.at + 1}` : ""}`;
   }
 
   /* ---------- review + starred tabs ---------- */

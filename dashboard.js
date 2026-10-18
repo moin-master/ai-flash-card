@@ -1,6 +1,7 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const ID = document.body.dataset.deck;
+  try { localStorage.setItem("flashcards:last", ID); } catch {}
   const cards = (window.CARDS || {})[ID] || [];
   const deck = (window.DECKS || []).find((x) => x.id === ID) || {};
   const PAGE = (deck.cards || "").split("/").pop(); // file name of this deck's flash cards page

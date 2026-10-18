@@ -43,6 +43,7 @@
       return;
     }
     status = load(deck.id);
+    try { localStorage.setItem("flashcards:last", deck.id); } catch {}
     stars = loadStars(deck.id);
     views = loadViews(deck.id);
     deckName.textContent = `${deck.emoji} ${deck.title}`;
