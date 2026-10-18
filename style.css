@@ -9,6 +9,24 @@
   --pink: #ff5c8a;
   --yellow: #ffd23f;
   --on-accent: #0b0b14;
+  /* theme: decorative colours (blobs, headline gradient, main button, ring) */
+  --t1: #a78bfa;
+  --t2: #ff5c8a;
+  --t3: #ffd23f;
+  --cta: #b6ff3b;
+  --cta-dark: #7fb81f;
+  --ring: #b6ff3b;
+}
+
+/* blue theme (Agentic AI) */
+body[data-theme="blue"] {
+  --purple: #4da3ff;
+  --t1: #4da3ff;
+  --t2: #22d3ee;
+  --t3: #7cf2d0;
+  --cta: #4da3ff;
+  --cta-dark: #2a6fc4;
+  --ring: #22d3ee;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
@@ -70,7 +88,7 @@ html, body {
   border: 1.5px solid var(--card-edge);
   border-radius: 28px;
   padding: 26px 22px 22px;
-  box-shadow: 0 0 40px rgba(167, 139, 250, .12);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--purple) 14%, transparent);
   touch-action: pan-y;
   user-select: none; -webkit-user-select: none;
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
@@ -173,7 +191,7 @@ strong { color: var(--yellow); font-weight: 800; }
   display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
   color: var(--text); text-decoration: none; background: rgba(21,21,42,.85); border: 1.5px solid var(--card-edge);
 }
-.back svg { width: 22px; height: 22px; color: var(--lime); }
+.back svg { width: 22px; height: 22px; color: var(--cta); }
 .back:active { transform: scale(.94); }
 
 .tag-right { display: flex; align-items: center; gap: 10px; }

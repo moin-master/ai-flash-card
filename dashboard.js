@@ -2,6 +2,8 @@
   const $ = (id) => document.getElementById(id);
   const ID = document.body.dataset.deck;
   const cards = (window.CARDS || {})[ID] || [];
+  const deck = (window.DECKS || []).find((x) => x.id === ID) || {};
+  const PAGE = (deck.cards || "").split("/").pop(); // file name of this deck's flash cards page
 
   const read = (key) => { try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; } };
   const status = read(`flashcards:${ID}`);
@@ -36,10 +38,10 @@
   const started = known.length + review.length > 0 || posAt > 0;
   if (posAt > 0) {
     $("ctaText").textContent = `Resume · card ${posAt + 1} of ${cards.length}`;
-    $("cta").href = `rag-flash-card.html#${encodeURIComponent(pos)}`;
+    $("cta").href = `${PAGE}#${encodeURIComponent(pos)}`;
   } else {
     $("ctaText").textContent = started ? "Continue" : "Start flash cards";
-    if (started && fresh[0]) $("cta").href = `rag-flash-card.html#${encodeURIComponent(fresh[0].id)}`;
+    if (started && fresh[0]) $("cta").href = `${PAGE}#${encodeURIComponent(fresh[0].id)}`;
   }
 
   // study rows
@@ -50,7 +52,7 @@
   if (starred.length) $("starHint").textContent = "Tap to study";
   if (!review.length) $("studyReview").classList.add("off");
   if (!starred.length) $("studyStar").classList.add("off");
-  if (fresh[0]) $("studyNew").href = `rag-flash-card.html#${encodeURIComponent(fresh[0].id)}`;
+  if (fresh[0]) $("studyNew").href = `${PAGE}#${encodeURIComponent(fresh[0].id)}`;
   else $("studyNew").classList.add("off");
 
   // topics (tags, in deck order)
@@ -62,7 +64,7 @@
     const r = all.filter((c) => status[c.id] === "review").length;
     const first = all[0];
     return `
-      <a class="row" href="rag-flash-card.html#${encodeURIComponent(first.id)}" style="--c:#32d74b">
+      <a class="row" href="${PAGE}#${encodeURIComponent(first.id)}" style="--c:#32d74b">
         <span class="tx"><b>${esc(t || "Other")}</b><small>${k} of ${all.length} learned${r ? ` · ${r} to review` : ""}</small>
           <span class="row-bar"><i style="width:${(k / all.length) * 100}%"></i></span></span>
         <span class="chev">›</span>
@@ -72,7 +74,7 @@
   // lists link straight to a card
   const list = (el, items, empty) => {
     el.innerHTML = items.length
-      ? items.map((c) => `<a class="row" href="rag-flash-card.html#${encodeURIComponent(c.id)}"><span class="tx"><b>${esc(c.term)}</b><small>${esc(c.tag || "")}</small></span><span class="chev">›</span></a>`).join("")
+      ? items.map((c) => `<a class="row" href="${PAGE}#${encodeURIComponent(c.id)}"><span class="tx"><b>${esc(c.term)}</b><small>${esc(c.tag || "")}</small></span><span class="chev">›</span></a>`).join("")
       : `<div class="row"><span class="tx"><small>${empty}</small></span></div>`;
   };
   list($("reviewList"), review, "Nothing here. Swipe a card left to add it.");

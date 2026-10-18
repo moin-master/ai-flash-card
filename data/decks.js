@@ -13,11 +13,13 @@ window.DECKS = [
   {
     "id": "agentic",
     "title": "Agentic AI",
-    "emoji": "🤖",
+    "emoji": "🕹️",
     "blurb": "Agents, tools, memory, MCP",
-    "color": "#ff5c8a",
+    "color": "#4da3ff",
     "topics": ["ReAct", "Tool use", "Memory", "MCP", "Multi-agent"],
-    "soon": true
+    "page": "agentic/index.html",
+    "cards": "agentic/agentic-flash-card.html",
+    "script": "data/agentic.js"
   },
   {
     "id": "llm",

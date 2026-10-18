@@ -57,6 +57,147 @@
 - Durable Execution / Checkpointing
 - Error Recovery / Retry
 
+
+## ✅ Covered as Flash Cards (100, grouped logically)
+
+> Deck: `data/agentic.js` · pages: `agentic/index.html` → `agentic/agentic-flash-card.html`
+
+### Foundations
+
+- ✅ AI Agent
+- ✅ Agent Loop
+- ✅ Agent vs Workflow
+- ✅ Levels of Autonomy
+- ✅ Agentic AI vs Generative AI
+- ✅ Compound AI System
+- ✅ Agent Architecture
+- ✅ Environment, Observation & Action
+
+### Reasoning
+
+- ✅ Chain-of-Thought (CoT)
+- ✅ ReAct (Reason + Act)
+- ✅ Plan-and-Execute
+- ✅ Task Decomposition
+- ✅ Hierarchical Planning
+- ✅ Replanning
+- ✅ Reflection / Self-Critique
+- ✅ Tree-of-Thought (ToT)
+- ✅ Self-Consistency
+- ✅ Reasoning Models & Test-Time Compute
+- ✅ Code as Action (CodeAct)
+
+### Tools
+
+- ✅ Tool Use
+- ✅ Function Calling
+- ✅ Tool Schema (JSON Schema)
+- ✅ Writing Good Tool Descriptions
+- ✅ Tool Selection & Tool Choice
+- ✅ Parallel Tool Calls
+- ✅ Structured Output
+- ✅ Tool Error Handling
+- ✅ Idempotency & Side Effects
+- ✅ Code Interpreter
+- ✅ Web Search & Browser Tools
+- ✅ Tool Overload & Tool Retrieval
+
+### Memory
+
+- ✅ Short-Term Memory
+- ✅ Long-Term Memory
+- ✅ Episodic, Semantic & Procedural Memory
+- ✅ Scratchpad / Working Memory
+- ✅ Context Window Management
+- ✅ Context Engineering
+- ✅ Context Compaction & Summarization
+- ✅ Vector Memory
+- ✅ Memory Retrieval & Forgetting
+- ✅ State & Checkpointing
+- ✅ Context Rot
+
+### Protocols
+
+- ✅ Model Context Protocol (MCP)
+- ✅ MCP Host, Client & Server
+- ✅ MCP Tools, Resources & Prompts
+- ✅ Agent-to-Agent Protocol (A2A)
+- ✅ Agent Authentication & OAuth
+- ✅ AGENTS.md & Instruction Files
+
+### Multi-Agent
+
+- ✅ Multi-Agent Systems
+- ✅ Orchestrator-Workers
+- ✅ Supervisor Pattern
+- ✅ Handoff
+- ✅ Prompt Chaining
+- ✅ Routing
+- ✅ Parallelization
+- ✅ Evaluator-Optimizer
+- ✅ Swarm Pattern
+- ✅ Debate & Mixture of Agents
+- ✅ Shared State / Blackboard
+- ✅ Sub-Agents & Context Isolation
+
+### Frameworks
+
+- ✅ LangGraph
+- ✅ LangChain
+- ✅ AutoGen
+- ✅ CrewAI
+- ✅ OpenAI Agents SDK
+- ✅ Claude Agent SDK
+
+### Runtime
+
+- ✅ State Machines & Graph Workflows
+- ✅ Durable Execution
+- ✅ Human-in-the-Loop (HITL)
+- ✅ Interrupt & Resume
+- ✅ Retries, Timeouts & Fallbacks
+- ✅ Async Execution & Streaming
+
+### Apps
+
+- ✅ Coding Agents
+- ✅ Computer Use & Browser Agents
+- ✅ Deep Research Agents
+- ✅ Voice Agents
+- ✅ Customer Support Agents
+- ✅ Agentic RAG
+
+### Safety
+
+- ✅ Guardrails
+- ✅ Prompt Injection
+- ✅ Indirect Prompt Injection
+- ✅ Excessive Agency
+- ✅ Least Privilege
+- ✅ Sandboxing
+- ✅ The Lethal Trifecta
+- ✅ Runaway Loops & Budget Limits
+- ✅ Tool Poisoning & Supply-Chain Risk
+- ✅ Audit Logging & Kill Switch
+
+### Evaluation
+
+- ✅ Agent Evaluation
+- ✅ Task Success & pass@k
+- ✅ Trajectory Evaluation
+- ✅ Tool-Call Accuracy
+- ✅ Agent Benchmarks
+- ✅ LLM-as-a-Judge for Agents
+- ✅ Evals-Driven Development
+
+### Production
+
+- ✅ Observability & Tracing
+- ✅ Cost & Latency Trade-offs
+- ✅ Prompt Caching
+- ✅ Model Routing & Fallback
+- ✅ Compounding Errors & Failure Modes
+
 ## Fundamentals
 - AI Agent
 - Agentic AI
