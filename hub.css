@@ -81,7 +81,9 @@ body.hub .foot { position: static; margin: 22px 0 6px; pointer-events: auto; }
   box-shadow: 0 7px 0 #7fb81f, 0 18px 40px rgba(182,255,59,.28);
   transition: transform .12s ease, box-shadow .12s ease;
 }
-.primary span:last-child { font-size: 28px; line-height: 1; }
+.primary > span:last-child { font-size: 28px; line-height: 1; }
+.p-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.p-ico { flex: none; width: 28px; height: 28px; }
 .primary:active { transform: translateY(6px); box-shadow: 0 1px 0 #7fb81f, 0 8px 20px rgba(182,255,59,.2); }
 
 /* track tiles */
