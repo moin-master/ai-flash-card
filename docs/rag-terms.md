@@ -2,7 +2,7 @@
 
 ## ⭐ Most Important (AI Engineer Interviews)
 
-> ✅ = covered as a flash card in `data/rag.js` (50 cards, deck: rag-flash-card.html)
+> ✅ = covered as a flash card in `data/rag.js` (100 cards total, deck: rag-flash-card.html)
 
 - ✅ RAG vs Fine-Tuning
 - ✅ RAG Pipeline (Indexing → Retrieval → Generation)
@@ -53,6 +53,62 @@
 - ✅ Citations & Attribution
 - ✅ Knowledge Graph
 - ✅ Self-RAG / Corrective RAG
+
+
+## ⭐⭐ Next 50 Top-Ranked (Logical Order)
+
+> ✅ = covered as a flash card (cards 51–100 of the deck, sorted into the deck by pipeline stage)
+
+- ✅ Parametric vs Non-Parametric Memory
+- ✅ Knowledge Cutoff
+- ✅ Naive vs Advanced vs Modular RAG
+- ✅ Long Context vs RAG
+- ✅ Document Parsing & Loading
+- ✅ Tables, OCR & Multimodal Parsing
+- ✅ Metadata Extraction & Enrichment
+- ✅ Deduplication
+- ✅ Recursive Character Chunking
+- ✅ Structure-Aware Chunking
+- ✅ Sentence-Window Retrieval
+- ✅ Late Chunking
+- ✅ Contextual Retrieval
+- ✅ Embedding Dimensions
+- ✅ Matryoshka Embeddings
+- ✅ MTEB Benchmark
+- ✅ Domain-Specific & Fine-Tuned Embeddings
+- ✅ Embedding Model Versioning & Drift
+- ✅ Euclidean Distance & Dot Product
+- ✅ Multi-Vector & ColBERT (Late Interaction)
+- ✅ IVF Index
+- ✅ Product Quantization & Vector Compression
+- ✅ ANN Tuning: Recall vs Latency
+- ✅ Pre-Filtering vs Post-Filtering
+- ✅ TF-IDF
+- ✅ SPLADE (Learned Sparse)
+- ✅ Self-Query Retriever
+- ✅ Text-to-SQL RAG
+- ✅ Conversational Query Condensation
+- ✅ Step-Back Prompting
+- ✅ Query Decomposition
+- ✅ Stuff vs Map-Reduce vs Refine
+- ✅ RAG Prompt Template
+- ✅ Abstention ('I Don't Know')
+- ✅ RAPTOR
+- ✅ Adaptive RAG
+- ✅ Cache-Augmented Generation (CAG)
+- ✅ Multimodal RAG
+- ✅ Answer Relevance
+- ✅ The RAG Triad
+- ✅ Synthetic Test Set Generation
+- ✅ Offline vs Online Evaluation
+- ✅ Conflicting & Outdated Sources
+- ✅ PII Redaction
+- ✅ Guardrails in RAG
+- ✅ Multi-Tenancy
+- ✅ Streaming, Batching & Async
+- ✅ Observability & Tracing
+- ✅ Feedback Loop
+- ✅ DSPy
 
 ## Fundamentals
 - Retrieval-Augmented Generation (RAG)
