@@ -10,8 +10,8 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
-  <link rel="stylesheet" href="style.css?v=3">
-  <link rel="stylesheet" href="hub.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="hub.css?v=5">
 </head>
 <body class="hub">
   <div class="blob b1"></div>
@@ -22,19 +22,24 @@
     <h1 class="hero">Learn AI terms.<br><span class="grad">Ace the interview.</span></h1>
     <p class="sub">Swipe. Remember. Repeat.</p>
 
-    <a id="cta" class="cta" href="rag-flash-card.html">
-      <span id="ctaText">Start RAG cards</span>
-      <span class="cta-arrow">→</span>
-    </a>
-
-    <section class="stats" aria-label="Your progress">
-      <div class="stat-pill k"><b id="sKnown">0</b><span>GOT IT</span></div>
-      <div class="stat-pill r"><b id="sReview">0</b><span>REVIEW</span></div>
-      <div class="stat-pill d"><b id="sDecks">0</b><span>DECKS</span></div>
+    <section class="overall" aria-label="Your progress">
+      <div class="overall-top">
+        <div id="ring" class="o-ring" style="--p:0%"><div><b id="oPct">0%</b></div></div>
+        <div class="o-nums">
+          <div><b id="sKnown">0</b><span>GOT IT</span></div>
+          <div><b id="sReview">0</b><span>REVIEW</span></div>
+          <div><b id="sStar">0</b><span>STARRED</span></div>
+        </div>
+      </div>
+      <p id="oLine" class="o-line"></p>
+      <a id="cta" class="cta" href="#">
+        <span id="ctaText">Start learning</span>
+        <span class="cta-arrow">→</span>
+      </a>
     </section>
 
-    <h2 class="section">Pick your deck</h2>
-    <div id="decks" class="decks"></div>
+    <h2 class="section">Tracks</h2>
+    <div id="decks" class="tracks"></div>
 
     <h2 class="section">How it works</h2>
     <div class="how">
@@ -44,14 +49,13 @@
       <div><i>⭐</i><b>Double tap</b><span>star / unstar</span></div>
     </div>
 
-    <button id="clear" class="clear" type="button">🗑 Clear Got it &amp; Review</button>
-
+    <button id="clear" class="clear" type="button">🗑 Clear all Got it &amp; Review</button>
     <p class="note">Progress is saved on this device only.</p>
   </main>
 
   <footer class="foot">© Moin Master</footer>
 
   <script src="data/decks.js"></script>
-  <script src="hub.js?v=3"></script>
+  <script src="hub.js?v=5"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 ## ⭐ Most Important (AI Engineer Interviews)
 
-> ✅ = covered as a flash card in `data/rag.js` (100 cards total, deck: rag-flash-card.html)
+> ✅ = covered as a flash card in `data/rag.js` (100 cards total, deck: rag/rag-flash-card.html)
 
 - ✅ RAG vs Fine-Tuning
 - ✅ RAG Pipeline (Indexing → Retrieval → Generation)

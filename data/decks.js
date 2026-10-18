@@ -4,7 +4,9 @@ window.DECKS = [
     "title": "RAG",
     "emoji": "🔎",
     "blurb": "Retrieval-Augmented Generation",
-    "page": "rag-flash-card.html",
+    "color": "#a78bfa",
+    "topics": ["Chunking", "Embeddings", "Vector DBs", "Reranking", "Evaluation"],
+    "page": "rag/index.html",
     "script": "data/rag.js"
   },
   {
@@ -12,6 +14,8 @@ window.DECKS = [
     "title": "Agentic AI",
     "emoji": "🤖",
     "blurb": "Agents, tools, memory, MCP",
+    "color": "#ff5c8a",
+    "topics": ["ReAct", "Tool use", "Memory", "MCP", "Multi-agent"],
     "soon": true
   },
   {
@@ -19,6 +23,8 @@ window.DECKS = [
     "title": "LLM",
     "emoji": "🧠",
     "blurb": "Transformers, tuning, inference",
+    "color": "#ffd23f",
+    "topics": ["Attention", "Fine-tuning", "RLHF", "Quantization", "Decoding"],
     "soon": true
   }
 ];

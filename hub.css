@@ -50,40 +50,6 @@ body.hub { height: auto; min-height: 100%; overflow-y: auto; overflow-x: hidden;
 
 .section { font-size: 14px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 30px 0 12px; }
 
-/* deck tiles */
-.decks { display: flex; flex-direction: column; gap: 14px; }
-.deck-tile {
-  position: relative; display: flex; align-items: center; gap: 16px;
-  padding: 18px; border-radius: 26px; text-decoration: none; color: var(--text);
-  background: linear-gradient(var(--card), var(--card)) padding-box, linear-gradient(135deg, var(--purple), var(--pink)) border-box;
-  border: 2px solid transparent;
-  box-shadow: 0 0 36px rgba(167,139,250,.18);
-  transition: transform .12s ease;
-}
-.deck-tile:active { transform: scale(.97); }
-.deck-tile.soon { opacity: .55; box-shadow: none; background: var(--card); border: 1.5px dashed var(--card-edge); }
-
-.ring {
-  --p: 0%; flex: none; width: 64px; height: 64px; border-radius: 50%;
-  display: grid; place-items: center; font-size: 28px;
-  background: conic-gradient(var(--lime) var(--p), var(--card-edge) 0);
-  position: relative;
-}
-.ring::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--card); }
-.ring span { position: relative; }
-.deck-tile.soon .ring { background: var(--card-edge); }
-
-.deck-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
-.deck-info b { font-size: 21px; font-weight: 900; }
-.deck-info small { color: var(--muted); font-size: 13px; }
-.deck-info em { font-style: normal; color: var(--lime); font-size: 12px; font-weight: 800; margin-top: 4px; }
-.deck-tile.soon em { color: var(--muted); }
-.deck-go { font-size: 24px; font-weight: 900; color: var(--purple); }
-.sticker {
-  position: absolute; top: -10px; right: 16px; font-size: 11px; font-weight: 900; letter-spacing: .06em;
-  padding: 4px 10px; border-radius: 10px; background: var(--yellow); color: #0b0b14; transform: rotate(4deg);
-}
-
 /* how it works */
 .how { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .how div { text-align: center; padding: 14px 6px; border-radius: 20px; background: rgba(21,21,42,.8); border: 1.5px solid var(--card-edge); }
@@ -103,3 +69,103 @@ body.hub { height: auto; min-height: 100%; overflow-y: auto; overflow-x: hidden;
 }
 .clear:active { transform: scale(.96); }
 .clear[disabled] { opacity: .35; cursor: default; }
+
+/* RAG dashboard (rag/index.html) */
+.crumb { display: inline-block; color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 700; margin-bottom: 14px; }
+.dash-title { font-size: clamp(32px, 9vw, 42px); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; }
+.big-ring-box { display: flex; justify-content: center; margin: 26px 0 24px; }
+.big-ring {
+  --p: 0%; position: relative; width: 190px; height: 190px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: conic-gradient(var(--lime) var(--p), var(--card-edge) 0);
+  box-shadow: 0 0 50px rgba(182,255,59,.16);
+}
+.big-ring::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: var(--bg); }
+.big-ring div { position: relative; text-align: center; }
+.big-ring b { display: block; font-size: 46px; font-weight: 900; }
+.big-ring span { font-size: 13px; color: var(--muted); font-weight: 700; }
+.stats.four .stat-pill b { font-size: 24px; }
+.stat-pill.s b { color: var(--yellow); }
+.study { display: flex; gap: 10px; margin-top: 12px; }
+.study-btn {
+  flex: 1; text-align: center; text-decoration: none; padding: 13px 8px; border-radius: 18px;
+  font-size: 14px; font-weight: 800; background: rgba(21,21,42,.8); border: 1.5px solid var(--card-edge);
+}
+.study-btn.r { color: var(--pink); border-color: rgba(255,92,138,.4); }
+.study-btn.s { color: var(--yellow); border-color: rgba(255,210,63,.4); }
+.study-btn.off { opacity: .35; pointer-events: none; }
+.topics { display: flex; flex-direction: column; gap: 12px; }
+.topic-top { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+.topic-top b { font-weight: 800; }
+.topic-top span { color: var(--muted); font-weight: 700; font-variant-numeric: tabular-nums; }
+.tbar { height: 8px; border-radius: 99px; background: var(--card-edge); overflow: hidden; }
+.tbar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--purple), var(--lime)); }
+.cardlist { display: flex; flex-direction: column; gap: 8px; }
+.row {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; text-decoration: none; color: var(--text);
+  padding: 13px 16px; border-radius: 16px; background: rgba(21,21,42,.8); border: 1.5px solid var(--card-edge);
+  font-size: 15px; font-weight: 700;
+}
+.row:active { transform: scale(.98); }
+.row em { font-style: normal; font-size: 11px; font-weight: 800; color: var(--purple); white-space: nowrap; }
+.empty { color: var(--muted); font-size: 14px; padding: 4px 2px; }
+
+/* ---- Home v2: overall card + tracks ---- */
+.overall {
+  padding: 20px; border-radius: 28px;
+  background: rgba(21,21,42,.85); border: 1.5px solid var(--card-edge);
+  backdrop-filter: blur(8px); box-shadow: 0 0 40px rgba(167,139,250,.14);
+}
+.overall-top { display: flex; align-items: center; gap: 18px; }
+.o-ring {
+  --p: 0%; flex: none; position: relative; width: 96px; height: 96px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: conic-gradient(var(--lime) var(--p), var(--card-edge) 0);
+}
+.o-ring::before { content: ""; position: absolute; inset: 8px; border-radius: 50%; background: #15152a; }
+.o-ring div { position: relative; }
+.o-ring b { font-size: 24px; font-weight: 900; }
+.o-nums { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; text-align: center; }
+.o-nums b { display: block; font-size: 26px; font-weight: 900; }
+.o-nums span { font-size: 10px; font-weight: 800; letter-spacing: .06em; color: var(--muted); }
+.o-nums div:nth-child(1) b { color: var(--lime); }
+.o-nums div:nth-child(2) b { color: var(--pink); }
+.o-nums div:nth-child(3) b { color: var(--yellow); }
+.o-line { color: var(--muted); font-size: 13px; font-weight: 600; margin: 14px 0 16px; }
+.overall .cta { padding: 17px 22px; font-size: 18px; }
+
+.tracks { display: flex; flex-direction: column; gap: 16px; }
+.track {
+  --accent: var(--purple);
+  position: relative; display: block; padding: 18px; border-radius: 26px; text-decoration: none; color: var(--text);
+  background: linear-gradient(var(--card), var(--card)) padding-box, linear-gradient(135deg, var(--accent), transparent 85%) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 0 36px color-mix(in srgb, var(--accent) 22%, transparent);
+  transition: transform .12s ease;
+}
+.track:active { transform: scale(.98); }
+.track.soon { opacity: .6; box-shadow: none; background: var(--card); border: 1.5px dashed var(--card-edge); }
+.t-head { display: flex; align-items: center; gap: 14px; }
+.t-badge {
+  flex: none; width: 52px; height: 52px; border-radius: 18px; display: grid; place-items: center; font-size: 28px;
+  background: color-mix(in srgb, var(--accent) 22%, var(--bg));
+  border: 1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.t-title { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.t-title b { font-size: 22px; font-weight: 900; }
+.t-title small { color: var(--muted); font-size: 13px; }
+.t-go { font-size: 20px; font-weight: 900; color: var(--accent); }
+.t-bar { height: 8px; border-radius: 99px; background: var(--card-edge); overflow: hidden; margin: 16px 0 12px; }
+.t-bar i { display: block; height: 100%; border-radius: 99px; background: var(--accent); }
+.t-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.t-chips span {
+  font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px;
+  color: var(--text); background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+}
+.t-meta { margin-top: 12px; font-size: 12px; font-weight: 800; color: var(--accent); }
+.track.soon .t-meta { color: var(--muted); }
+.sticker {
+  position: absolute; top: -10px; right: 18px; font-size: 11px; font-weight: 900; letter-spacing: .06em;
+  padding: 4px 10px; border-radius: 10px; background: var(--yellow); color: #0b0b14; transform: rotate(4deg);
+}

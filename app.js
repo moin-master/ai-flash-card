@@ -11,10 +11,11 @@
   let status = {};
   let stars = {};
   let reviewOnly = false;
+  let starOnly = false;
 
   const storeKey = (id) => `flashcards:${id}`;
   const load = (id) => { try { return JSON.parse(localStorage.getItem(storeKey(id))) || {}; } catch { return {}; } };
-  const save = () => { try { localStorage.setItem(storeKey(deck.id), JSON.stringify(status)); } catch {} };
+  const save = () => { try { localStorage.setItem(storeKey(deck.id), JSON.stringify(status)); localStorage.setItem("flashcards:last", deck.id); } catch {} };
   const starKey = (id) => `flashcards:${id}:stars`;
   const loadStars = (id) => { try { return JSON.parse(localStorage.getItem(starKey(id))) || {}; } catch { return {}; } };
   const saveStars = () => { try { localStorage.setItem(starKey(deck.id), JSON.stringify(stars)); } catch {} };
@@ -34,11 +35,20 @@
     status = load(deck.id);
     stars = loadStars(deck.id);
     deckName.textContent = `${deck.emoji} ${deck.title}`;
+    // dashboard links: ?mode=review | ?mode=starred, and #card-id to jump to one card
+    const mode = new URLSearchParams(location.search).get("mode");
+    reviewOnly = mode === "review";
+    starOnly = mode === "starred";
     render();
+    const wanted = decodeURIComponent(location.hash.slice(1));
+    const at = cards.findIndex((c) => c.id === wanted);
+    if (at > 0) { feed.scrollTop = at * feed.clientHeight; updateProgress(); }
   }
 
   function render() {
-    cards = reviewOnly ? allCards.filter((c) => status[c.id] === "review") : allCards;
+    cards = reviewOnly ? allCards.filter((c) => status[c.id] === "review")
+      : starOnly ? allCards.filter((c) => stars[c.id])
+      : allCards;
     feed.innerHTML = "";
     cards.forEach((c, i) => feed.appendChild(cardSlide(c, i)));
     feed.appendChild(endSlide());
@@ -89,11 +99,11 @@
         <div class="stat r"><b>${review}</b><span>REVIEW</span></div>
       </div>
       <button class="btn" id="btnReview" ${review ? "" : "disabled"}>Study ✖ review cards</button>
-      <button class="btn ghost" id="btnAll">${reviewOnly ? "Back to all cards" : "Start over"}</button>`;
-    end.querySelector("#btnReview").onclick = () => { reviewOnly = true; render(); };
+      <button class="btn ghost" id="btnAll">${reviewOnly || starOnly ? "Back to all cards" : "Start over"}</button>`;
+    end.querySelector("#btnReview").onclick = () => { reviewOnly = true; starOnly = false; render(); };
     end.querySelector("#btnAll").onclick = () => {
-      if (!reviewOnly) { status = {}; save(); }
-      reviewOnly = false; render();
+      if (!reviewOnly && !starOnly) { status = {}; save(); }
+      reviewOnly = false; starOnly = false; render();
     };
   }
 
