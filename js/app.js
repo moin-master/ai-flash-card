@@ -79,11 +79,13 @@
         <span class="stamp know">GOT IT ✔</span>
         <span class="stamp again">REVIEW ✖</span>
         <div class="tag-row"><span class="tag">${esc(c.tag || "Concept")}</span><span class="tag-right"><span class="views${views[c.id] ? "" : " hide"}">👁 <i>${views[c.id] || 0}</i></span><span class="star-badge" aria-label="Starred">⭐</span></span></div>
-        <h2 class="term">${esc(c.term)}</h2>
+        <h2 class="term">${rich(c.term)}</h2>
         <div class="label why">🎤 INTERVIEW ANSWER</div>
-        <p class="explain">${rich(c.explain)}</p>
-        <div class="label eg">🔥 REAL LIFE</div>
-        <ul class="example">${c.example.map((e) => `<li>${rich(e)}</li>`).join("")}</ul>
+        ${Array.isArray(c.explain)
+          ? `<ul class="example answer">${c.explain.map((e) => `<li>${rich(e)}</li>`).join("")}</ul>`
+          : `<p class="explain">${rich(c.explain)}</p>`}
+        ${c.example ? `<div class="label eg">🔥 REAL LIFE</div>
+        <ul class="example">${c.example.map((e) => `<li>${rich(e)}</li>`).join("")}</ul>` : ""}
         <div class="hints"><span class="l">◀ review</span><span class="u">⬆ next</span><span class="r">got it ▶</span></div>
       </article>`;
     const card = slide.querySelector(".card");

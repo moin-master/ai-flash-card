@@ -31,5 +31,16 @@ window.DECKS = [
     "page": "llm/index.html",
     "cards": "llm/llm-flash-card.html",
     "script": "data/llm.js"
+  },
+  {
+    "id": "javaai",
+    "title": "Java AI",
+    "emoji": "☕",
+    "blurb": "Production Java AI architecture",
+    "color": "#34d399",
+    "topics": ["Ollama", "LangChain4j", "pgvector", "Kafka", "Observability"],
+    "page": "javaai/index.html",
+    "cards": "javaai/javaai-flash-card.html",
+    "script": "data/javaai.js"
   }
 ];

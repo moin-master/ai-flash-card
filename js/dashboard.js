@@ -15,6 +15,7 @@
   const totalViews = cards.reduce((n, c) => n + (views[c.id] || 0), 0);
   const seenCards = cards.filter((c) => views[c.id]).length;
 
+  const plain = (s) => s.replace(/\*\*/g, "");
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const plural = (n) => `${n} card${n === 1 ? "" : "s"}`;
 
@@ -75,7 +76,7 @@
   // lists link straight to a card
   const list = (el, items, empty) => {
     el.innerHTML = items.length
-      ? items.map((c) => `<a class="row" href="${PAGE}#${encodeURIComponent(c.id)}"><span class="tx"><b>${esc(c.term)}</b><small>${esc(c.tag || "")}</small></span><span class="chev">›</span></a>`).join("")
+      ? items.map((c) => `<a class="row" href="${PAGE}#${encodeURIComponent(c.id)}"><span class="tx"><b>${esc(plain(c.term))}</b><small>${esc(c.tag || "")}</small></span><span class="chev">›</span></a>`).join("")
       : `<div class="row"><span class="tx"><small>${empty}</small></span></div>`;
   };
   list($("reviewList"), review, "Nothing here. Swipe a card left to add it.");
@@ -88,7 +89,7 @@
   onScroll();
 
   $("clear").addEventListener("click", () => {
-    if (!confirm("Clear RAG Got it and Review marks? Your stars stay.")) return;
+    if (!confirm(`Clear ${deck.title || "this deck's"} Got it and Review marks? Your stars stay.`)) return;
     try { localStorage.removeItem(`flashcards:${ID}`); } catch {}
     location.reload();
   });

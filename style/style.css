@@ -29,6 +29,17 @@ body[data-theme="amber"] {
   --ring: #ff7a45;
 }
 
+/* green theme (Java AI) */
+body[data-theme="green"] {
+  --purple: #34d399;
+  --t1: #34d399;
+  --t2: #22d3ee;
+  --t3: #b6ff3b;
+  --cta: #34d399;
+  --cta-dark: #1b9468;
+  --ring: #34d399;
+}
+
 /* blue theme (Agentic AI) */
 body[data-theme="blue"] {
   --purple: #4da3ff;
@@ -132,6 +143,8 @@ html, body {
 }
 strong { color: var(--yellow); font-weight: 800; }
 .example strong { color: var(--lime); }
+.answer strong { color: var(--yellow); }
+.answer li::before { color: var(--yellow); }
 .example li::before { content: "▸"; position: absolute; left: 0; color: var(--lime); }
 
 .stamp {

@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Learn AI interview terms on your phone. Swipe. Remember. Repeat.</b><br>
-  300 cards across RAG, Agentic AI and LLMs, written in simple English with real-life examples.
+  424 cards across RAG, Agentic AI, LLMs and Production Java AI, written in simple English with real-life examples.
 </p>
 
 <p align="center">
@@ -47,6 +47,7 @@
 | 🔎 **RAG** | 100 | 🟣 purple | chunking, embeddings, vector DBs, hybrid search, reranking, evaluation |
 | 🕹️ **Agentic AI** | 100 | 🔵 blue | ReAct, tool use, memory, MCP, multi-agent patterns, guardrails |
 | 🧠 **LLM** | 100 | 🟠 amber | transformers, attention, fine-tuning, RLHF, quantization, decoding |
+| ☕ **Java AI** | 124 | 🟢 green | Ollama, LangChain4j, pgvector, Kafka, guardrails, observability, Vector API (16 components with a 30-card guardrails deep dive, easy → hard) |
 
 Each deck is grouped in a logical learning order (for example Foundations → Architecture → Training → Tuning → Prompting → Inference → Evaluation → Safety).
 
@@ -71,6 +72,7 @@ ai-flash-card/
 ├── rag/                  # RAG deck: index.html (dashboard) + rag-flash-card.html
 ├── agentic/              # Agentic AI deck
 ├── llm/                  # LLM deck
+├── javaai/               # Production Java AI deck
 ├── js/                   # app.js (cards), hub.js (home), dashboard.js (dashboards)
 ├── style/                # style.css (cards + themes), hub.css (home + dashboards)
 ├── data/                 # decks.js + rag.js / agentic.js / llm.js (the card content)
@@ -108,6 +110,12 @@ Open the deck's data file (for example `data/rag.js`) and add an object. Wrap wo
 }
 ```
 
+Answers can also be a list of short bullets (as in the Java AI deck). The `term` is shown as the question, and `**bold**` works in both:
+
+```js
+{ "id": "x-1", "term": "What is **HNSW**?", "tag": "3 · Vector Search", "explain": ["**Graph** index", "Best **recall/speed**"] }
+```
+
 ## ➕ Add a deck
 
 1. Create `data/<deck>.js` with the cards.
@@ -122,7 +130,7 @@ Push to the `main` branch. **GitHub Pages** (*Settings → Pages → Deploy from
 
 ## 📝 Study notes
 
-The original term lists live in [`docs/`](docs): [RAG](docs/rag-terms.md), [Agentic AI](docs/agentic-ai-terms.md) and [LLM](docs/llm-terms.md). Terms already turned into cards are marked ✅.
+The original term lists live in [`docs/`](docs): [RAG](docs/rag-terms.md), [Agentic AI](docs/agentic-ai-terms.md) and [LLM](docs/llm-terms.md) and [Java AI](docs/java-ai-interview-cards.md). Terms already turned into cards are marked ✅.
 
 ---
 

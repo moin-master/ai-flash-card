@@ -1,5 +1,6 @@
 (async () => {
   const $ = (id) => document.getElementById(id);
+  const plain = (s) => s.replace(/\*\*/g, "");
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const read = (key) => {
     try { return JSON.parse(localStorage.getItem(key)) || {}; } catch { return {}; }
@@ -109,7 +110,7 @@
       <h2 class="gh">${d.title} · ${list.length}</h2>
       <div class="group">${list.map((c) => `
         <a class="row" href="${d.cards}#${encodeURIComponent(c.id)}" style="--c:${d.color || "#a78bfa"}">
-          <span class="tx"><b>${esc(c.term)}</b><small>${esc(c.tag || "")}</small></span>
+          <span class="tx"><b>${esc(plain(c.term))}</b><small>${esc(c.tag || "")}</small></span>
           <span class="chev">›</span>
         </a>`).join("")}
       </div>`).join("");
