@@ -34,6 +34,16 @@
   // escape first, then turn **word** into bold
   const rich = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
+  // answer = the card's own sentences/bullets + extra points + closing detail/link, 10 points in total
+  const sentences = (t) => t.replace(/([.!?])\s+(?=[A-Z'(\u2018"])/g, "$1|").split("|");
+  const points = (c) => {
+    const base = Array.isArray(c.explain) ? c.explain : sentences(c.explain);
+    const tail = ((window.MORE || {})[deck.id] || {})[c.id] || [];
+    const extra = ((window.EXTRA || {})[deck.id] || {})[c.id] || [];
+    const room = Math.max(0, 10 - base.length - tail.length);
+    return base.concat(extra.slice(0, room), tail).map((e) => `<li>${rich(e)}</li>`).join("");
+  };
+
   async function init() {
     const id = document.body.dataset.deck;
     deck = (window.DECKS || []).find((d) => d.id === id);
@@ -80,10 +90,7 @@
         <span class="stamp again">REVIEW ✖</span>
         <div class="tag-row"><span class="tag">${esc(c.tag || "Concept")}</span><span class="tag-right"><span class="views${views[c.id] ? "" : " hide"}">👁 <i>${views[c.id] || 0}</i></span><span class="star-badge" aria-label="Starred">⭐</span></span></div>
         <h2 class="term">${rich(c.term)}</h2>
-        <div class="label why">🎤 INTERVIEW ANSWER</div>
-        ${Array.isArray(c.explain)
-          ? `<ul class="example answer">${c.explain.map((e) => `<li>${rich(e)}</li>`).join("")}</ul>`
-          : `<p class="explain">${rich(c.explain)}</p>`}
+        <ul class="example answer">${points(c)}</ul>
         ${c.example ? `<div class="label eg">🔥 REAL LIFE</div>
         <ul class="example">${c.example.map((e) => `<li>${rich(e)}</li>`).join("")}</ul>` : ""}
         <div class="hints"><span class="l">◀ review</span><span class="u">⬆ next</span><span class="r">got it ▶</span></div>

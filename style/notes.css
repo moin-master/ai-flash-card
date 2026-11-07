@@ -1,0 +1,32 @@
+/* Study notes page (notes.html) */
+.label { font-size: 12px; font-weight: 800; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+.theme-card, .chain-card {
+  border-radius: 22px; padding: 16px 18px; margin-bottom: 12px; font-size: 17px; line-height: 1.5;
+  background: var(--card); border: 1.5px solid var(--card-edge);
+}
+.theme-card { background: linear-gradient(160deg, color-mix(in srgb, var(--cta) 18%, var(--card)), var(--card) 75%); border-color: color-mix(in srgb, var(--cta) 45%, var(--card-edge)); }
+.chain-card p { font-size: 15px; }
+strong { color: var(--cta); font-weight: 800; }
+
+.rail { display: flex; align-items: center; justify-content: space-between; gap: 2px; margin: 16px 0 6px; position: sticky; top: 56px; z-index: 10; padding: 8px 4px; border-radius: 18px; background: color-mix(in srgb, var(--bg) 82%, transparent); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.rail a { display: grid; justify-items: center; gap: 2px; text-decoration: none; color: var(--text); font-size: 11px; font-weight: 800; padding: 4px 6px; border-radius: 12px; }
+.rail a span { font-size: 22px; }
+.rail a:active { background: var(--card); }
+.rail i { color: var(--muted); font-style: normal; font-weight: 900; }
+
+.nstation { margin-top: 26px; scroll-margin-top: 120px; }
+.nst-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.nst-icon { font-size: 36px; }
+.nst-head b { display: block; font-size: 22px; font-weight: 900; color: var(--cta); text-transform: uppercase; letter-spacing: .04em; }
+.nst-head span:not(.nst-icon) { color: var(--muted); font-size: 14px; font-weight: 600; line-height: 1.35; }
+
+.nsec { background: var(--card); border: 1.5px solid var(--card-edge); border-radius: 22px; padding: 16px 16px 14px; margin-bottom: 12px; }
+.nsec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.nsec-head .num { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 14px; font-weight: 900; background: var(--cta); color: var(--on-accent); }
+.nsec-head h3 { font-size: 18px; font-weight: 800; line-height: 1.2; }
+.nlist { list-style: none; display: grid; gap: 8px; }
+.nlist li { position: relative; padding-left: 16px; font-size: 16px; line-height: 1.45; }
+.nlist li::before { content: ""; position: absolute; left: 1px; top: .55em; width: 7px; height: 7px; border-radius: 50%; background: var(--cta); }
+.nnext { margin-top: 12px; padding: 10px 12px; border-radius: 14px; font-size: 14px; font-weight: 700; line-height: 1.4; color: var(--text); background: color-mix(in srgb, var(--cta) 14%, transparent); border: 1px dashed color-mix(in srgb, var(--cta) 55%, transparent); }
+.nnext strong { color: var(--text); text-decoration: underline; text-decoration-color: var(--cta); text-underline-offset: 3px; }
+.primary { margin-top: 24px; }
